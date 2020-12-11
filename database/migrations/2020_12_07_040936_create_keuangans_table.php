@@ -16,9 +16,8 @@ class CreateKeuangansTable extends Migration
         Schema::create('keuangans', function (Blueprint $table) {
             $table->id();
             $table->string('tanggal');
-            $table->integer('pemasukan')->nullable();
-            $table->integer('pengeluaran')->nullable();
-            $table->integer('saldo');
+            $table->integer('pemasukan');
+            $table->integer('pengeluaran');
             $table->string('deskripsi');
             $table->string('jenis');
             $table->timestamps();

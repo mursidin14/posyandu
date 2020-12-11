@@ -15,7 +15,7 @@ class CreatePenimbangansTable extends Migration
     {
         Schema::create('penimbangans', function (Blueprint $table) {
             $table->id();
-            $table->string('tanggal');
+            $table->string('tanggal_timbang');
             $table->foreignId('balita_id')->constrained('balitas')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('bb');
             $table->integer('tb');

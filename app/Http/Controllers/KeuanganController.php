@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Session as FacadesSession;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Str;
 
+use App\Models\Balita;
+
 class KeuanganController extends Controller
 {
     /**
@@ -37,7 +39,7 @@ class KeuanganController extends Controller
          /* Return view berungsi untuk mengembalikan tampilan ke folder keuangan kemudian file index 
             compact berfungsi untuk membawa data dari Kontroller menuju ke tampilan
          */
-        return view('keuangan.index',compact('keuangan','masuk','keluar','saldo','dari','sampai'));
+        return view('auth.index',compact('keuangan','masuk','keluar','saldo','dari','sampai'));
     }
     public function periode(Request $request){
         $filterTanggal = Keuangan::all();
@@ -48,8 +50,12 @@ class KeuanganController extends Controller
         $masuk = $keuangan->sum('pemasukan');
         $keluar = $keuangan->sum('pengeluaran');
         $saldo = $masuk -$keluar;
+
+
+        
         return view('keuangan.index',compact('keuangan','masuk','keluar','saldo','filterTanggal','dari','sampai'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -207,7 +213,6 @@ class KeuanganController extends Controller
         $pdf = PDF::loadview('keuangan.cetakpdf.cetakpdf',compact('total','masuk','keluar','saldo','dari','sampai'))->setPaper('a4', 'landscape');
         return $pdf->download($dari.'_'.$sampai.'_laporan_rekapitulasi.pdf'); 
     }
-
     public function cetakRekap(){
         $rekap = Keuangan::paginate(100);
         $masuk = $rekap->sum('pemasukan');

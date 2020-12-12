@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label for="tanggal">Tanggal Kas Masuk</label>
                             <div class="input-group mb-3">
-                                <input class="dateselect form-control" name="tanggal" type="text" placeholder="00/00/0000" autocomplete="off">
+                                <input class="dateselect form-control" name="tanggal" type="text" placeholder="Tahun-Bulan-Tanggal" autocomplete="off">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
                                 </div>

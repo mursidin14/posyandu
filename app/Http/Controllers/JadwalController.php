@@ -6,6 +6,7 @@ use App\Models\Balita;
 use App\Models\Jadwal;
 use App\Models\Penimbangan;
 use Illuminate\Http\Request;
+use App\Models\Keuangan;
 
 class JadwalController extends Controller
 {
@@ -39,6 +40,12 @@ class JadwalController extends Controller
     public function create()
     {
         //
+    }
+
+    public function bebas()
+    {
+        $keuangan = Keuangan::all();
+        return view('feby', compact('keuangan'));
     }
 
     /**

@@ -21,7 +21,7 @@
         <div class="form-group">
             <label for="tanggal_kegiatan">Tanggal Penimbangan</label>
             <div class="input-group mb-3">
-                <input autocomplete="off" class="dateselect form-control" name="tanggal_kegiatan" type="text" placeholder="00/00/0000">
+                <input autocomplete="off" class="dateselect form-control" name="tanggal_kegiatan" type="text" placeholder="Tahun-Bulan-Tanggal">
                 <div class="input-group-append">
                     <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
                 </div>

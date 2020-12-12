@@ -53,3 +53,11 @@ Route::resource('/blog' ,BlogController::class);
 Route::resource('/akun' ,AkunController::class);
 Route::get('/',[JadwalController::class,'index']);
 
+
+
+
+
+
+Route::get('/febyy', [KeuanganController::class,'cobabalita']);
+
+Route::get('/bebas', [JadwalController::class,'bebas']);

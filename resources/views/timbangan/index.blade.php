@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label for="tanggal_timbang">Tanggal Penimbangan</label>
                 <div class="input-group mb-3">
-                    <input class="dateselect form-control" name="tanggal_timbang" type="text" placeholder="00/00/0000">
+                    <input class="dateselect form-control" name="tanggal_timbang" type="text" placeholder="Tahun-Bulan-Tanggal" autocomplete="off">
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
                     </div>
@@ -134,15 +134,16 @@
     });
     });
 
+    //Source Code Chart
     Highcharts.chart('chartNilai', {
     chart: {
         type: 'line'
     },
     title: {
-        text: 'Monthly Average Rainfall'
+        text: 'Chart Data Balita'
     },
     subtitle: {
-        text: 'Source: WorldClimate.com'
+        text: 'Source: posyanduseruni3.com'
     },
     xAxis: {
         categories: {!!json_encode($chart)!!},

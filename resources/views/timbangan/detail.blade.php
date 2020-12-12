@@ -44,10 +44,10 @@
         type: 'column'
     },
     title: {
-        text: 'Monthly Average Rainfall'
+        text: 'Chart Perkembangan'
     },
     subtitle: {
-        text: 'Source: WorldClimate.com'
+        text: 'Source: posyanduseruni3.com'
     },
     xAxis: {
         categories: {!!json_encode($chart)!!},

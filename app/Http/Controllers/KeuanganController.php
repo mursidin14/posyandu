@@ -39,7 +39,7 @@ class KeuanganController extends Controller
          /* Return view berungsi untuk mengembalikan tampilan ke folder keuangan kemudian file index 
             compact berfungsi untuk membawa data dari Kontroller menuju ke tampilan
          */
-        return view('auth.index',compact('keuangan','masuk','keluar','saldo','dari','sampai'));
+        return view('keuangan.index',compact('keuangan','masuk','keluar','saldo','dari','sampai'));
     }
     public function periode(Request $request){
         $filterTanggal = Keuangan::all();

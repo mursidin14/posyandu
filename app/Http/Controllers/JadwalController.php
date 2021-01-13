@@ -42,12 +42,6 @@ class JadwalController extends Controller
         //
     }
 
-    public function bebas()
-    {
-        $keuangan = Keuangan::all();
-        return view('feby', compact('keuangan'));
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -78,7 +72,7 @@ class JadwalController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

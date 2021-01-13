@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Balita;
+use App\Models\Gallery;
 use App\Models\Jadwal;
 use App\Models\Penimbangan;
 use Illuminate\Http\Request;
@@ -29,7 +30,18 @@ class JadwalController extends Controller
             $beratBadan[]= $mp->bb;
             $tinggiBadan[]= $mp->tb;
         }
-        return view('welcome',compact('jadwal','countBalita','timbangan','chart','tinggiBadan','beratBadan'));
+
+        $gallery = Gallery::all();
+
+        return view('welcome',compact('jadwal',
+            'countBalita',
+            'timbangan',
+            'chart',
+            'tinggiBadan',
+            'beratBadan',
+            'gallery',
+            'balita'
+        ));
     }
 
     /**

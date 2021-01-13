@@ -12,7 +12,7 @@
 </head>
 <body>
     <div style="text-align: center;">
-        <h3 style="text-align: center;">LAPORAN REKAPITULASI KAS </h3>
+        <h3 style="text-align: center;">LAPORAN REKAPITULASI KAS FEBY </h3>
         <h1 style="text-align: center;">POSYANDU SERUNI III </h1>
         <p style="text-align: center;">Semua Data</p>
         <hr>

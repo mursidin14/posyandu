@@ -4,6 +4,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BalitaController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\PenimbanganController;
@@ -54,7 +55,7 @@ Route::resource('/akun' ,AkunController::class);
 Route::get('/',[JadwalController::class,'index']);
 
 
-
+Route::resource('/gallery', GalleryController::class);
 
 
 Route::get('/febyy', [KeuanganController::class,'cobabalita']);

@@ -12,7 +12,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Input Data Kas Keluar</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="tanggal">Tanggal Kas Masuk</label>
+                            <label for="tanggal">Tanggal Kas Keluar</label>
                             <div class="input-group mb-3">
                                 <input class="dateselect form-control" name="tanggal" type="text" placeholder="Tahun-Bulan-Tanggal" autocomplete="off">
                                 <div class="input-group-append">
@@ -43,9 +43,9 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="pemasukan">Kas Masuk</label>
-                            <input type="text" class="form-control @error('pemasukan') is-invalid @enderror" name="pemasukan"  id="pemasukan" value="{{ old('pemasukan') }}" placeholder="Rp." autocomplete="off">
-                            @error('pemasukan')
+                            <label for="pengeluaran">Kas Masuk</label>
+                            <input type="text" class="form-control @error('pengeluaran') is-invalid @enderror" name="pengeluaran"  id="pengeluaran" value="{{ old('pengeluaran') }}" placeholder="Rp." autocomplete="off">
+                            @error('pengeluaran')
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>

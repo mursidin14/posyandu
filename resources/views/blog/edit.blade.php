@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
-<form action="/blog" method="post" enctype="multipart/form-data">
+<form action="/blog/{{$jadwal->id}}" method="post" enctype="multipart/form-data">
     @csrf
-    @method('post')
+    @method('patch')
     <div class="form-group">
         <label for="tanggal_kegiatan">Tanggal Penimbangan</label>
         <div class="input-group mb-3">

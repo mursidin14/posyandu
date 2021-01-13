@@ -42,6 +42,7 @@ class BlogController extends Controller
             'tanggal_kegiatan'=>'required',
             'nama_kegiatan'=>'required',
         ]);
+        
         $blog = Jadwal::create($request->all());
         return redirect('/blog')->with('status','Data Jadwal Berhasil Di Tambahkan');
     }
@@ -77,7 +78,20 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama_kegiatan' =>'required',
+            'tanggal_kegiatan' =>'required',
+            'waktu' =>'required',
+        ]);
+        
+        Jadwal::where('id',$id)
+                ->update([
+                    'nama_kegiatan'=>$request->nama_kegiatan,
+                    'tanggal_kegiatan'=>$request->tanggal_kegiatan,
+                    'waktu'=>$request->waktu,
+                    
+                ]);
+        return redirect('/blog')->with('status','Data Jadwal Berhasil Di Update');
     }
 
     /**

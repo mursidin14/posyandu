@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .border-left-primary {
-      border-left: 0.25rem solid #4e73df !important;
+      border-left: 0.25rem solid #fd6bc5/* #4e73df*/ !important;
     }
     .border-left-secondary {
       border-left: 0.25rem solid #858796 !important;
@@ -37,13 +37,8 @@
     @if (session('status'))
         <div class="alert alert-success">
                 {{ session('status') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
         </div>
     @endif
-</div>
-
 <div class="">
     <div class="card border-left-primary shadow p-3 mb-5 bg-white rounded">
         <div class="d-flex justify-content-lg-end mb-3">
@@ -66,13 +61,10 @@
                 {{-- <th scope="col">Alamat</th> --}}
                 {{-- <th scope="col">Keterangan</th> --}}
                 <th scope="col">Aksi</th>
-            
               </tr>
             </thead>
             <tbody>
-                
                 <?php $i=1; ?>
-              
                 @foreach($balita as $key => $item)
                 <tr>
                 <th scope="row">{{ $key + $balita->firstItem()}}</th>
@@ -85,7 +77,6 @@
                     {{-- <td>{{$item->alamat}}</td> --}}
                     {{-- <td>{{$item->ket}}</td> --}}
                     <td>
-                        
                         <form action="/balita/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin Hapus Data?')">
                             @csrf
                             @method('delete')
@@ -103,9 +94,5 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 @endsection

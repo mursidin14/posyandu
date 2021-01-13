@@ -38,7 +38,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Balita Yang Terdata</div>
+                            Balita yang Terdata</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlahBalita}} Balita</div>
                     </div>
                     <div class="col-auto">
@@ -48,7 +48,7 @@
             </div>
             <div class="d-flex justify-content-center" >
                 <a href="/balita" class="justify-content-center text-decoration-none">
-                    More info <i class="fa fa-arrow-circle-right"></i>
+                    Info lebih lanjut <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
@@ -71,7 +71,7 @@
             </div>
             <div class="d-flex justify-content-center" >
                 <a href="/kasmasuk" class="justify-content-center text-decoration-none">
-                    More info <i class="fa fa-arrow-circle-right"></i>
+                    Info lebih lanjut <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
@@ -105,7 +105,7 @@
             </div>
             <div class="d-flex justify-content-center" >
                 <a href="/kaskeluar" class="justify-content-center text-decoration-none">
-                    More info <i class="fa fa-arrow-circle-right"></i>
+                    Info lebih lanjut <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>
@@ -129,7 +129,7 @@
             </div>
             <div class="d-flex justify-content-center" >
                 <a href="/keuangan" class="justify-content-center text-decoration-none">
-                    More info <i class="fa fa-arrow-circle-right"></i>
+                    Info lebih lanjut <i class="fa fa-arrow-circle-right"></i>
                 </a>
             </div>
         </div>

@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .border-left-primary {
-      border-left: 0.25rem solid #4e73df !important;
+      border-left: 0.25rem solid #fd6bc5/* #4e73df*/ !important;
     }
     .border-left-secondary {
       border-left: 0.25rem solid #858796 !important;
@@ -37,13 +37,6 @@
     @if (session('status'))
         <div class="alert alert-success">
                 {{ session('status') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-        </div>
-    @endif
-</div>
-
 <div class="">
     <div class="card border-left-primary shadow p-3 mb-5 bg-white rounded">
         <div class="d-flex justify-content-lg-end mb-3">

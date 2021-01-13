@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Posyandu Seruni III</title>
+  <title>Posyandu Seruni 3</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -44,7 +44,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="/"><img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU  SERUNI III</span></a></h1>
+        <h1 class="text-light"><a href="/"><img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU  SERUNI 3</span></a></h1>
       
         <!-- Uncomment below if you prefer to use an image logo -->
         {{-- <a href="/"><img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"></a> --}}
@@ -53,8 +53,8 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="/">Beranda</a></li>
-          <li><a href="#jadwal">Jadwal</a></li>
           <li><a href="#about">Profil</a></li>
+          <li><a href="#jadwal">Jadwal</a></li>
           <li><a href="#gallery">Galeri</a></li>
           <li><a href="#team">Organisasi</a></li>
           <li><a href="#contact">Kontak</a></li>
@@ -81,9 +81,9 @@
               <br>Mendukung pelayanan Keluarga Berencana.
               <br>Mendukung pemberdayaan keluarga dan masyarakat.
               <br>Pusat informasi dan konseling dalam perlindungan anak</h2>
-            <div class="text-center text-lg-left">
+            <!--<div class="text-center text-lg-left">
               <a href="#about" class="btn-get-started scrollto">Get Started</a>
-            </div>
+            </div>-->
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
@@ -110,88 +110,86 @@
 
   </section><!-- End Hero -->
 
-  <main id="main">
-
-    <section id="jadwal" class="features">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          {{-- <h2>Jadwal</h2> --}}
-          <p>Jadwal Pelayanan</p>
-        </div>
-        {{-- <div class="count-box">
-          <table class="table table-bordered" data-aos="fade-left">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Layanan</th>
-                <th scope="col">Tanggal</th>
-               
-              </tr>
-            </thead>
-            <tbody>
-              @php
-                  $i=1;
-              @endphp
-              @foreach ($jadwal as $item) 
-              <tr>
-              <th scope="row">{{$i++}}</th>
-                <td>{{$item->nama_kegiatan}}</td>
-                <td>{{date('d F Y',strtotime($item->tanggal_kegiatan))}}</td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
-        </div> --}}
-
-        @foreach ($jadwal as $item)
-        <div class="section-title pl-4" data-aos="fade-up">
-          <h2 style="color:#010483 ">{{date('d F Y',strtotime($item->tanggal_kegiatan))}} </h2>
-          {{-- <p style="color: red;padding-left:20px;">{{$item->nama_kegiatan}}</p> --}}
-          <h3 style="padding-left:50px;font-size: 28px;font-weight: 700;color: #207a59;">{{$item->nama_kegiatan}} 
-          </h3>
-          <span style="color:rosybrown;font-size: 14px;padding-left:60px;">Jam Layanan : {{$item->waktu}} WIB</span>
-        </div>
-        @endforeach
-
-        
-
-      </div>
-    </section><!-- End Features Section -->
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container-fluid">
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-            <a href="https://www.youtube.com/watch?v=Z9-Loi6b4lM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <!--<a href="https://www.youtube.com/watch?v=Z9-Loi6b4lM" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>-->
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-            <h3>Profile Posyandu</h3>
-            <p>Posyandu adalah kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang dibantu oleh petugas kesehatan. (Cessnasari. 2005) judul artikel (Pengertian Posyandu, Kegiatan, Definisi, Tujuan, Fungsi, Manfaat  dan Pelaksanaan Posyandu. KMS)</p>
+            <h3>PROFIL POSYANDU SERUNI 3</h3>
+            <p>Posyandu Seruni 3 berdiri sejak tanggal 5 Mei 2008. Posyandu ini terletak di Perum. Ungaran Baru RT 004 RW 013, Ds. Leyangan, Kec. Ungaran Timur, Kab. Semarang dengan diketuai oleh Ibu.<!--adalah kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang dibantu oleh petugas kesehatan. (Cessnasari. 2005) judul artikel (Pengertian Posyandu, Kegiatan, Definisi, Tujuan, Fungsi, Manfaat  dan Pelaksanaan Posyandu. KMS)--></p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
               <h4 class="title"><a href="">Visi </a></h4>
-              <p class="description">Visi 123456</p>
+              <p class="description">Menjadi perantara untuk pelayanan kesehatan keluarga (ibu, bayi, dan balita) agar dapat menjamin pertumbuhan dan perkembangan bayi secara optimal di lingkungan RW 13</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon"><i class="bx bx-gift"></i></div>
               <h4 class="title"><a href="">Misi</a></h4>
-              <p class="description">Misi 123456</p>
+              <p class="description">1. Melaksanakan penimbangan bayi dan balita sebulan sekali agar dapat terpantau pertumbuhan dan perkembangannya.<br>
+                2. Melakukan kerjasama dengan Puskesmas terdekat dalam usaha meningkatkan kesehatan ibu, bayi, dan balita.<br>
+                3. Mendukung dan membantu program pemerintah di bidang kesehatan.<br>
+                4. Mengembangkan kemampuan sumber daya manusia para kader Posyandu.</p>
             </div>
-
-            
-
           </div>
         </div>
-
       </div>
     </section><!-- End About Section -->
 
+    <main id="main">
+
+      <section id="jadwal" class="features">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-up">
+            {{-- <h2>Jadwal</h2> --}}
+            <p>Jadwal Pelayanan</p>
+          </div>
+          {{-- <div class="count-box">
+            <table class="table table-bordered" data-aos="fade-left">
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Layanan</th>
+                  <th scope="col">Tanggal</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                @php
+                    $i=1;
+                @endphp
+                @foreach ($jadwal as $item) 
+                <tr>
+                <th scope="row">{{$i++}}</th>
+                  <td>{{$item->nama_kegiatan}}</td>
+                  <td>{{date('d F Y',strtotime($item->tanggal_kegiatan))}}</td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div> --}}
+  
+          @foreach ($jadwal as $item)
+          <div class="section-title pl-4" data-aos="fade-up">
+            <h2 style="color:#010483 ">{{date('d F Y',strtotime($item->tanggal_kegiatan))}} </h2>
+            {{-- <p style="color: red;padding-left:20px;">{{$item->nama_kegiatan}}</p> --}}
+            <h3 style="padding-left:50px;font-size: 28px;font-weight: 700;color: #dd2c93{{-- #207a59 --}};">{{$item->nama_kegiatan}} 
+            </h3>
+            <span style="color:rosybrown;font-size: 14px;padding-left:60px;">Jam Layanan : {{$item->waktu}} WIB</span>
+          </div>
+          @endforeach
+  
+          
+  
+        </div>
+      </section><!-- End Features Section -->
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
@@ -203,10 +201,18 @@
             <div class="count-box">
               <i class="icofont-simple-smile"></i>
               <span data-toggle="counter-up">{{$countBalita}}</span>
-              <p>Balita Yang Terdata</p>
+              <p>Balita yang Terdata</p>
             </div>
           </div>
           
+          <div class="col">
+            <div class="count-box">
+              <i class="icofont-simple-smile"></i>
+              <span data-toggle="counter-up">16</span>
+              <p>Kader Posyandu</p>
+            </div>
+          </div>
+
           {{-- <div class="col-lg-6 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="icofont-users-alt-5"></i>
@@ -258,72 +264,80 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Gallery</h2>
-          <p>Check our Gallery</p>
+          <h2>Galeri</h2>
+          <p>DOKUMENTASI KEGIATAN</p>
         </div>
 
         <div class="row no-gutters" data-aos="fade-left">
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-              <a href="assets/img/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-              <a href="assets/img/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri1.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri1.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-              <a href="assets/img/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri2.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri2.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
-              <a href="assets/img/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri3.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri3.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-              <a href="assets/img/gallery/gallery-5.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri4.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri4.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
-              <a href="assets/img/gallery/gallery-6.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri5.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri5.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-              <a href="assets/img/gallery/gallery-7.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri6.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri6.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="assets/img/gallery/gallery-8.jpg" class="venobox" data-gall="gallery-item">
-                <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+              <a href="assets/img/gallery/galeri7.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+              <a href="assets/img/gallery/galeri8.jpg" class="venobox" data-gall="gallery-item">
+                <img src="assets/img/gallery/galeri8.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -339,72 +353,72 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Our Great Team</p>
+          <h2>Organisasi</h2>
+          <p>ORGANISASI POSYANDU SERUNI 3</p>
         </div>
 
         <div class="row" data-aos="fade-left">
 
           <div class="col-lg-3 col-md-6">
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Walter White</h4>
-                <span>Ketua Posyandu</span>
-                <div class="social">
+                <span>Ketua Kader Posyandu</span>
+                <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
                   <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="member" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Sarah Jhonson</h4>
-                <span>Sekertaris Posyandu</span>
-                <div class="social">
+                <span>Sekretaris Kader Posyandu</span>
+                <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
                   <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="member" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>William Anderson</h4>
-                <span>Bendahara Posyandu</span>
-                <div class="social">
+                <span>Bendahara Kader Posyandu</span>
+                <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
                   <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="member" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
                 <span>Humas Posyandu</span>
-                <div class="social">
+                <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
                   <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
@@ -424,8 +438,8 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
+          <h2>Kontak</h2>
+          <p>KONTAK KAMI</p>
         </div>
 
         <div class="row">
@@ -434,20 +448,20 @@
             <div class="info">
               <div class="address">
                 <i class="icofont-google-map"></i>
-                <h4>Location:</h4>
-                <p>Perumahan Ungaran Baru RT 004/RW 013</p>
+                <h4>Lokasi</h4>
+                <p>Perum. Ungaran Baru RT 004/RW 013, Ds. Leyangan, Kec. Ungaran Timur, Kab. Semarang</p>
               </div>
 
               <div class="email">
                 <i class="icofont-envelope"></i>
-                <h4>Email:</h4>
-                <p>Posyandu@ungaran.com</p>
+                <h4>Email</h4>
+                <p>posyanduseruni3@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="icofont-phone"></i>
-                <h4>No Hp</h4>
-                <p>123456789</p>
+                <h4>No. HP</h4>
+                <p>08995523964</p>
               </div>
 
             </div>

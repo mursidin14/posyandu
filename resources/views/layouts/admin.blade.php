@@ -69,7 +69,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
                     </form>
-                    <a class="dropdown-item" href="{{ route('logout') }}">Profile</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}">Profil</a>
                 </div>
             </li>
           </ul>
@@ -103,10 +103,10 @@
     <!--mobile navigation bar end-->
     <!--sidebar start-->
     <div class="sidebar">
-      <div class="profile_info">
+      {{-- <div class="profile_info">
         <img src="https://badoystudio.com/wp-content/uploads/2018/05/usericon.png" class="profile_image" alt="">
-        <h4>Jessica</h4>
-      </div>
+        <h4>Admin</h4>
+      </div> --}}
       <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
       <a href="/balita"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
       <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Timbangan</span></a>

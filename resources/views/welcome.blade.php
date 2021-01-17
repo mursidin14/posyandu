@@ -72,15 +72,15 @@
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>Manfaat <span>Posyandu</span></h1>
+            <h1><span>Selamat Datang di Website Posyandu Seruni 3!</span></h1>
             {{-- <h2>Pos Pelayanan Keluarga Berencana - Kesehatan Terpadu adalah kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang dibantu oleh petugas kesehatan. Posyandu merupakan salah satu Upaya Kesehatan Bersumberdaya Masyarakat.</h2> --}}
-            <h2 style="font-size: 19px;">Perbaikan perilaku, keadaan gizi dan kesehatan keluarga.
+            <!--<h2 style="font-size: 19px;">Perbaikan perilaku, keadaan gizi dan kesehatan keluarga.
               <br> Mendukung perilaku hidup bersih dan sehat.
               <br>Pencegahan penyakit yang berbasis lingkungan.
               <br>Pencegahan penyakit dengan imunisasi.
               <br>Mendukung pelayanan Keluarga Berencana.
               <br>Mendukung pemberdayaan keluarga dan masyarakat.
-              <br>Pusat informasi dan konseling dalam perlindungan anak</h2>
+              <br>Pusat informasi dan konseling dalam perlindungan anak</h2>-->
             <!--<div class="text-center text-lg-left">
               <a href="#about" class="btn-get-started scrollto">Get Started</a>
             </div>-->
@@ -121,16 +121,16 @@
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
             <h3>PROFIL POSYANDU SERUNI 3</h3>
-            <p>Posyandu Seruni 3 berdiri sejak tanggal 5 Mei 2008. Posyandu ini terletak di Perum. Ungaran Baru RT 004 RW 013, Ds. Leyangan, Kec. Ungaran Timur, Kab. Semarang dengan diketuai oleh Ibu.<!--adalah kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang dibantu oleh petugas kesehatan. (Cessnasari. 2005) judul artikel (Pengertian Posyandu, Kegiatan, Definisi, Tujuan, Fungsi, Manfaat  dan Pelaksanaan Posyandu. KMS)--></p>
+            <p>Posyandu Seruni 3 berdiri sejak tanggal 5 Mei 2008. Posyandu ini terletak di Perum. Ungaran Baru RT 004 RW 013, Ds. Leyangan, Kec. Ungaran Timur, Kab. Semarang dengan diketuai oleh Ibu Ita Sujarwo.<!--adalah kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang dibantu oleh petugas kesehatan. (Cessnasari. 2005) judul artikel (Pengertian Posyandu, Kegiatan, Definisi, Tujuan, Fungsi, Manfaat  dan Pelaksanaan Posyandu. KMS)--></p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <div class="icon"><i class="bx bxs-bullseye"></i></div>
               <h4 class="title"><a href="">Visi </a></h4>
               <p class="description">Menjadi perantara untuk pelayanan kesehatan keluarga (ibu, bayi, dan balita) agar dapat menjamin pertumbuhan dan perkembangan bayi secara optimal di lingkungan RW 13</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-gift"></i></div>
+              <div class="icon"><i class="bx bx-rocket"></i></div>
               <h4 class="title"><a href="">Misi</a></h4>
               <p class="description">1. Melaksanakan penimbangan bayi dan balita sebulan sekali agar dapat terpantau pertumbuhan dan perkembangannya.<br>
                 2. Melakukan kerjasama dengan Puskesmas terdekat dalam usaha meningkatkan kesehatan ibu, bayi, dan balita.<br>
@@ -199,15 +199,15 @@
 
           <div class="col">
             <div class="count-box">
-              <i class="icofont-simple-smile"></i>
+              <i class="icofont-baby"></i>
               <span data-toggle="counter-up">{{$countBalita}}</span>
-              <p>Balita yang Terdata</p>
+              <p>Balita</p>
             </div>
           </div>
           
           <div class="col">
             <div class="count-box">
-              <i class="icofont-simple-smile"></i>
+              <i class="icofont-people"></i>
               <span data-toggle="counter-up">16</span>
               <p>Kader Posyandu</p>
             </div>
@@ -278,13 +278,13 @@
               </div>
             </div>
           @endforeach
-
-  
         </div>
-
       </div>
     </section><!-- End Gallery Section -->
-
+    {{--<div id="myModal" class="modal">
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>--}}
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -295,13 +295,14 @@
           <p>ORGANISASI POSYANDU SERUNI 3</p>
         </div>
 
-        <div class="row" data-aos="fade-left">
+        <center><img src="assets/img/gallery/struktur.jpg" alt="Stickman" width="1000px" height="500px"></center>"
+        {{--<div class="row" data-aos="fade-left">
 
           <div class="col-lg-3 col-md-6">
             <div class="member" data-aos="zoom-in" data-aos-delay="100">
               <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Walter White</h4>
+                <h4>Ita Sujarwo</h4>
                 <span>Ketua Kader Posyandu</span>
                 <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -317,7 +318,7 @@
             <div class="member" data-aos="zoom-in" data-aos-delay="200">
               <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
+                <h4>Ririn Hardini</h4>
                 <span>Sekretaris Kader Posyandu</span>
                 <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -333,7 +334,7 @@
             <div class="member" data-aos="zoom-in" data-aos-delay="300">
               <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>William Anderson</h4>
+                <h4>Tari Zamroni</h4>
                 <span>Bendahara Kader Posyandu</span>
                 <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
@@ -350,7 +351,7 @@
               <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
-                <span>Humas Posyandu</span>
+                <span>Anggota Kader Posyandu</span>
                 <!--<div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -361,7 +362,7 @@
             </div>
           </div>
 
-        </div>
+        </div>--}}
 
       </div>
     </section><!-- End Team Section -->
@@ -421,15 +422,15 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Bootslander</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>2021<!--Bootslander--></span></strong>. Posyandu Seruni 3
       </div>
-      <div class="credits">
+      {{--<div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+        <!--Designed by A22.2018.02677 (Febrina Cahyani A.)--><!--<a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+      </div>--}}
     </div>
   </footer><!-- End Footer -->
 
@@ -464,10 +465,10 @@
           type: 'area'
       },
       title: {
-          text: 'Grapic Perkembangan Balita'
+          text: 'Grafik Perkembangan Balita'
       },
       subtitle: {
-          text: 'Source: Posyandu.com'
+          text: 'Sumber: posyanduseruni3.com'
       },
       xAxis: {
           categories: {!!json_encode($chart)!!},
@@ -503,7 +504,18 @@
   
       },]
   });
-                
+  /*var modal = document.getElementById("myModal");
+  var img = document.getElementByClassName("myImg");
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  for (var i = 0; i < img.length; i++) {
+  var images = img[i];
+  images.onclick = function(event) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}*/             
   </script>
 </body>
 

@@ -3,9 +3,9 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Rekap Keuangan</li>
-      <li class="breadcrumb-item"><a href="/kasmasuk">Kas Masuk</a></li>
-      <li class="breadcrumb-item"><a href="/kaskeluar">Kas Keluar</a></li>
+      <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data Keuangan</li>
+      <li class="breadcrumb-item active" aria-current="page">Rekapitulasi</li>
     </ol>
 </nav>
 <div class="">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-dark" ><i class="fas fa-search"></i></button>
+                    <button type="submit" class="btn btn-outline-secondary" ><i class="fas fa-search"></i></button>
                 </div>
             </form>
         </div>
@@ -61,8 +61,8 @@
         
         <div class="col">
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-dark mr-1" data-toggle="modal" data-target="#exampleModal">
-                    Tambah
+                <button type="button" class="btn btn-outline-secondary mr-1" data-toggle="modal" data-target="#exampleModal">
+                    Tambah Data
                 </button>
                 <a href="/cetakrekap" type="button" class="btn btn-outline-dark" ><i class="fas fa-">Cetak Rekapan</i></a>
             </div>
@@ -70,13 +70,13 @@
     </div>  
         <div class="table-responsive">
         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-            <thead style="background: #1cc88a">
+            <thead style="background: #fd6bc5">
               <tr>
                 <th width="3%" scope="col">No</th>
                 <th width="15%" scope="col">Tanggal</th>
                 <th width="35%" scope="col">Uraian</th>
-                <th width="15%" scope="col">Pemasukan</th>
-                <th width="15%" scope="col">Pengeluaran</th>
+                <th width="15%" scope="col">Kas Masuk</th>
+                <th width="15%" scope="col">Kas Keluar</th>
                 <th width="15%" scope="col">Saldo</th>
               </tr>
             </thead>

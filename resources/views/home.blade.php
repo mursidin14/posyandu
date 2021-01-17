@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center" style="margin-top: 150px">
+        <div class="col-md-3">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <center><div class="card-header" style="background: #ff7ec9; color: white;">{{ __('Dashboard') }}</div></center>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Yeay, sudah berhasil log in! ^^') }}
                 </div>
             </div>
         </div>

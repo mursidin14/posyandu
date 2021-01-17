@@ -3,9 +3,9 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/penimbangan">Data Penimbangan</a></li>
+      <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/penimbangan" style="color: #fd6bc5">Data Penimbangan</a></li>
       <li class="breadcrumb-item active" aria-current="page">Edit Data Penimbangan</li>
-  
     </ol>
 </nav>
 <div class="card shadow p-3 mb-5 bg-white rounded">
@@ -51,7 +51,7 @@
                 </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-outline-dark">Simpan Data</button>
+            <button type="submit" class="btn btn-outline-success">Simpan</button>
         </form>
         </div>
 </div>

@@ -3,7 +3,8 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/keuangan">Rekap Keuangan</a></li>
+      <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/keuangan" style="color: #fd6bc5">Data Keuangan</a></li>
       <li class="breadcrumb-item active" aria-current="page">Kas Keluar</li>
     </ol>
 </nav>
@@ -90,7 +91,7 @@
                     </div>
                 </div>
                 {{-- <button type="submit">Submit</button> --}}
-                <button type="submit" class="btn btn-outline-dark" ><i class="fas fa-search"></i></button>
+                <button type="submit" class="btn btn-outline-secondary" ><i class="fas fa-search"></i></button>
             </div>
         </form>
     </div>
@@ -110,8 +111,8 @@
     </div>
     <div class="col">
         <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
-                Tambah
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">
+                Tambah Data
             </button>
         </div>
     </div>
@@ -129,7 +130,7 @@
 
     <div class="table-responsive">
     <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-        <thead style="background: #1cc88a">
+        <thead style="background: #fd6bc5">
           <tr>
             <th width="3%" scope="col">No</th>
             <th width="15%" scope="col">Tanggal</th>
@@ -152,7 +153,7 @@
                         @method('delete')
                         <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
                     </form>
-                    <a href="/keuangan/{{$item->id}}/edit" class="btn btn-success" ><i class="fas fa-edit"></i></a> 
+                    <a href="/keuangan/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
                 </td>
                 @endforeach
                 <tr style="background: silver;">

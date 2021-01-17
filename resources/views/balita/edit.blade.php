@@ -7,8 +7,8 @@
 <div class="">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/balita">Data Balita</a></li>
+          <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="/balita" style="color: #fd6bc5">Data Balita</a></li>
           <li class="breadcrumb-item active" aria-current="page">Edit Data Balita</li>
         </ol>
     </nav>
@@ -99,7 +99,7 @@
                     </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-outline-dark">Simpan Data</button>
+                <button type="submit" class="btn btn-outline-success">Simpan</button>
             </form>
         </div>
     </div>

@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-    color:#ff7ec9; /*#34e5a6;*/
+    color:#fff; /*#34e5a6;*/
     text-decoration: none;
 }
 
@@ -98,13 +98,13 @@ h6 {
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    background: #ff7ec9; /*#1acc8d;*/
+    background: #fd5dbb; /*#ff7ec9*/ /*#1acc8d;*/
     color: #fff;
     transition: all 0.4s;
 }
 
 .back-to-top i:hover {
-    background: #ff7ec9; /*#2be4a2;*/
+    background: #fff; /*#2be4a2;*/
     color: #fff;
 }
 
@@ -204,7 +204,7 @@ h6 {
     height: 2px;
     bottom: 3px;
     left: 25px;
-    background-color: #ff7ec9; /*#1acc8d;*/
+    background-color: #fff; /*#1acc8d;*/
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -762,7 +762,7 @@ section {
     justify-content: center;
     width: 64px;
     height: 64px;
-    border: 2px solid #7ceec6;
+    border: 2px solid #7c7dbe; /*#7ceec6*/;
     border-radius: 50px;
     transition: 0.5s;
 }
@@ -968,7 +968,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     font-size: 24px;
-    background: #1acc8d;
+    background: #ff7ec9; /*#1acc8d;*/
     padding: 12px;
     color: #fff;
     border-radius: 50px;
@@ -1036,6 +1036,7 @@ section {
 .gallery .gallery-item:hover img {
     transform: scale(1.1);
 }
+
 
 /*--------------------------------------------------------------
 # Testimonials

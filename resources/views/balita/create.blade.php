@@ -4,6 +4,13 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/balita" style="color: #fd6bc5">Data Balita</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tambah Data Balita</li>
+    </ol>
+</nav>
 <div class="">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -92,7 +99,7 @@
                     </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-outline-dark">Simpan Data</button>
+                <button type="submit" class="btn btn-outline-success">Simpan</button>
             </form>
         </div>
     </div>

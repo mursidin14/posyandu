@@ -3,9 +3,8 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Rekap Keuangan</li>
-      <li class="breadcrumb-item"><a href="/kasmasuk">Kas Masuk</a></li>
-      <li class="breadcrumb-item"><a href="/kaskeluar">Kas Keluar</a></li>
+        <li class="breadcrumb-item"><a href="/dashboard" style="color: #ff7ec9">Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Galeri</li>
     </ol>
 </nav>
 <div class="">
@@ -19,7 +18,7 @@
     @endif
 </div>
 <div class="">
-    <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
+    <div class="card shadow p-3 mb-2 bg-white rounded border-left-primary">
         <form action="/gallery" method="post"  enctype="multipart/form-data">
             @csrf
             @method('post')
@@ -57,7 +56,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-success">Simpan</button>
         </form>
     </div>
 </div>

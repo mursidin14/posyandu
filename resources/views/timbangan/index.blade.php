@@ -3,8 +3,8 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      
-      <li class="breadcrumb-item active" aria-current="page">Data Timbangan</li>
+      <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data Penimbangan</li>
     </ol>
 </nav>
 
@@ -31,7 +31,7 @@
             <div class="form-group">
                 <label for="inlineFormCustomSelect">Nama Balita</label>
                 <select name="balita_id" class="custom-select mr-sm-2 @error('balita_id') is-invalid @enderror" id="inlineFormCustomSelect">
-                    <option selected>Nama Balita...</option>
+                    <option selected>Nama Balita</option>
                     @foreach ($balita as $option)
                         <option value="{{$option->id}}">{{$option->nama_balita}}</option>
                     @endforeach
@@ -60,7 +60,7 @@
                 </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-outline-dark">Simpan Data</button>
+            <button type="submit" class="btn btn-outline-success">Simpan</button>
         </form>
         </div>
         <div class="col">
@@ -84,10 +84,10 @@
     <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
         <div class="table-responsive">
         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-            <thead style="background: #1cc88a">
+            <thead style="background: #fd6bc5">
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Ditimbang Tanggal</th>
+                <th scope="col">Tanggal Penimbangan</th>
                 <th scope="col">Nama Balita</th>
                 <th scope="col">Berat Badan</th>
                 <th scope="col">Tinggi Badan</th>
@@ -104,12 +104,12 @@
                     <td>{{$item->bb}} kg</td>
                     <td>{{$item->tb}} cm</td>
                     <td>
-                        <form action="/penimbangan/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin Hapus Data?')">
+                        <form action="/penimbangan/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
                         </form>
-                        <a href="/penimbangan/{{$item->id}}/edit" class="btn btn-success" ><i class="fas fa-edit"></i></a> 
+                        <a href="/penimbangan/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
                     </td>
                 </tr>
          
@@ -140,10 +140,10 @@
         type: 'line'
     },
     title: {
-        text: 'Chart Data Balita'
+        text: 'Grafik Data Balita'
     },
     subtitle: {
-        text: 'Source: posyanduseruni3.com'
+        text: 'Sumber: posyanduseruni3.com'
     },
     xAxis: {
         categories: {!!json_encode($chart)!!},
@@ -152,7 +152,7 @@
     yAxis: {
         min: 0,
         title: {
-            text: 'Rainfall (kg/cm)'
+            text: 'BB/TB (kg/cm)'
         }
     },
     tooltip: {

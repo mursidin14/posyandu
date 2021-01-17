@@ -39,13 +39,17 @@
         width: 100%;
       }
       .border-left-primary {
-        border-left: 0.25rem solid #4e73df !important;
+        border-left: 0.25rem solid #ff7ec9 !important; /*Warna untuk sisi kiri di semua menu dashboard back end*/
       }
     </style>
   </head>
   <body>
       <input type="checkbox" id="check">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" {{--style="background: #ff7ec9"--}}>
+        <div class="container">
+        <a href="/dashboard" class="navbar-brand">
+          <img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,22 +61,23 @@
                 </label>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white"><i class="fas fa-user" style="color: white"></i>
                     {{ Auth::user()->name }}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                    <!--<a class="dropdown-item" href="{{ route('logout') }}">Profil</a>-->
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                    {{ __('Log Out') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
                     </form>
-                    <a class="dropdown-item" href="{{ route('logout') }}">Profil</a>
                 </div>
             </li>
           </ul>
         </div>
+      </div>
       </nav>
 
     <!--header area end-->
@@ -84,8 +89,9 @@
       </div>
       <div class="mobile_nav_items">
         <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/gallery"><i class="fas fa-image"></i><span>Galeri</span></a>
         <a href="/balita"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
-        <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Timbangan</span></a>
+        <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
         <a class="dropdown-btn"><i class="fas fa-university"></i><span>Data Keuangan</span></a>
         <div class="dropdown-container">
           <a href="/kasmasuk"><i class="fas fa-plus-square"></i><span>Kas Masuk</span></a>
@@ -95,22 +101,22 @@
           <a href="#">Link 2</a>
           <a href="#">Link 3</a> --}}
         </div>
-        <a href="/blog"><i class="fas fa-blog"></i><span>Data Blog</span></a>
-        <a href="/akun"><i class="fas fa-user"></i><span>Data Akun</span></a>
-        <a href="/gallery"><i class="fas fa-image"></i><span>Gallery </span></a>
+        <a href="/blog"><i class="fas fa-blog"></i><span>Data Jadwal Pelayanan</span></a>
+        <a href="/akun"><i class="fas fa-user"></i><span>Data Akun User</span></a>
       </div>
     </div>
     <!--mobile navigation bar end-->
     <!--sidebar start-->
-    <div class="sidebar">
+    <div class="sidebar bg-dark">
       {{-- <div class="profile_info">
         <img src="https://badoystudio.com/wp-content/uploads/2018/05/usericon.png" class="profile_image" alt="">
         <h4>Admin</h4>
       </div> --}}
       <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="/gallery"><i class="fas fa-image"></i><span>Galeri</span></a>
       <a href="/balita"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
-      <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Timbangan</span></a>
-      <a class="dropdown-btn"><i class="fas fa-university"></i><span>Data Keuangan</span></a>
+      <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
+      <a class="dropdown-btn" style="cursor: pointer;"><i class="fas fa-university"></i><span>Data Keuangan</span></a>
       <div class="dropdown-container">
         <a href="/kasmasuk"><i class="fas fa-plus-square"></i><span>Kas Masuk</span></a>
         <a href="/kaskeluar"><i class="fas fa-minus-square"></i><span>Kas Keluar </span></a>
@@ -119,9 +125,8 @@
         <a href="#">Link 2</a>
         <a href="#">Link 3</a> --}}
       </div>
-      <a href="/blog"><i class="fas fa-blog"></i><span>Data Blog</span></a>
-      <a href="/akun"><i class="fas fa-user"></i><span>Data Akun</span></a>
-      <a href="/gallery"><i class="fas fa-image"></i><span>Gallery </span></a>
+      <a href="/blog"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
+      <a href="/akun"><i class="fas fa-user"></i><span>Data Akun User</span></a>
    
     </div>
     <!--sidebar end-->

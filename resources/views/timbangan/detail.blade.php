@@ -3,8 +3,9 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/penimbangan">Data Timbangan</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Detail Timbangan Balita</li>
+      <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/penimbangan" style="color: #fd6bc5">Data Penimbangan</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Detail Data Penimbangan</li>
     </ol>
 </nav>
 <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
@@ -44,10 +45,10 @@
         type: 'column'
     },
     title: {
-        text: 'Chart Perkembangan'
+        text: 'Grafik Perkembangan'
     },
     subtitle: {
-        text: 'Source: posyanduseruni3.com'
+        text: 'Sumber: posyanduseruni3.com'
     },
     xAxis: {
         categories: {!!json_encode($chart)!!},

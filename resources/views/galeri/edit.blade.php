@@ -3,7 +3,8 @@
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+        <li class="breadcrumb-item"><a href="/gallery">Gallery</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Edit</li>
     </ol>
 </nav>
 <div class="">
@@ -18,9 +19,9 @@
 </div>
 <div class="">
     <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
-        <form action="/gallery" method="post"  enctype="multipart/form-data">
+        <form action="/gallery/{{$gallery->id}}" method="post"  enctype="multipart/form-data">
             @csrf
-            @method('post')
+            @method('patch')
 
             <label for="l_name">
                 Nama Gambar
@@ -28,7 +29,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="name" class="form-control" value="{{$gallery->name}}">
                     </div>
                 </div>
             </div>
@@ -39,7 +40,7 @@
                 <div class="form-group">
                     <div class="col-md-8 ">
                         <div class="d-flex justify-content-center">
-                            <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+                            <img src="{{ url('/storage/'.$gallery->image) }}" id="preview" class="img-thumbnail">
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -60,28 +61,6 @@
     </div>
 </div>
 
-{{-- Gambar --}}
-<div class="row row-cols-2 row-cols-md-5 m-1">
-    @foreach($gallery as $key => $item)
-        <div class="card m-3" style="width: 18rem;">
-            <div class="row">
-                <div class="col">
-                    <p class="float-left"><strong>{{$item->name}}</strong></p>
-                </div>
-                <div class="col">
-                    
-                    <form class="float-right" method="post" action="/gallery/{{$item->id}}">
-                        @csrf
-                        @method('delete')
-                        <a href="/gallery/{{$item->id}}/edit" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
-                    </form>
-                </div>
-            </div>
-            <img src="{{ url('/storage/'.$item->image) }}" class="card-img-top" alt="...">
-        </div>
-    @endforeach
-</div>
 
 
 <script>

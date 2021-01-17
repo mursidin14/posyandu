@@ -1,6 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
+@if (session('status'))
+<div class="alert alert-success">
+        {{ session('status') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+</div>
+@endif
 <div class="">
     <div class="card border-left-primary shadow p-3 mb-5 bg-white rounded">
         <div class="d-flex justify-content-lg-end mb-3">

@@ -204,7 +204,7 @@ h6 {
     height: 2px;
     bottom: 3px;
     left: 25px;
-    background-color: #ff7ec9; /*#1acc8d;*/
+    background-color: #fff; /*#1acc8d;*/
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;

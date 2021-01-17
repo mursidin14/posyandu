@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AkunController extends Controller
 {
@@ -25,7 +26,7 @@ class AkunController extends Controller
      */
     public function create()
     {
-        //
+        return view('akun.create');
     }
 
     /**
@@ -36,7 +37,18 @@ class AkunController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect('/akun')->with('status','Akun Berhasil Dibuat !');
     }
 
     /**
@@ -58,7 +70,8 @@ class AkunController extends Controller
      */
     public function edit($id)
     {
-        //
+        $akun = User::find($id);
+        return view('akun.edit',compact('akun'));
     }
 
     /**
@@ -70,7 +83,19 @@ class AkunController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        User::where('id',$id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect('/akun')->with('status','Akun Berhasil Dirubah !');
+
     }
 
     /**
@@ -81,6 +106,7 @@ class AkunController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $akun = User::destroy($id);
+        return redirect('/akun')->with('status','Akun Berhasil Dihapus !');
     }
 }

@@ -41,6 +41,7 @@ class BlogController extends Controller
         $request->validate([
             'tanggal_kegiatan'=>'required',
             'nama_kegiatan'=>'required',
+            'waktu'=>'required'
         ]);
         
         $blog = Jadwal::create($request->all());
@@ -64,8 +65,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jadwal $jadwal)
+    public function edit($id)
     {
+        $jadwal = Jadwal::find($id);
         return view('blog.edit',compact('jadwal'));
     }
 

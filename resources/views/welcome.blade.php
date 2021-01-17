@@ -273,6 +273,7 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                 <a href="{{ url('/storage/'.$item->image) }}" class="venobox" data-gall="gallery-item">
+                  <p>{{$item->name}}</p>
                   <img src="{{ url('/storage/'.$item->image) }}" alt="" class="img-fluid">
                 </a>
               </div>

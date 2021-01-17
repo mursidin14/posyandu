@@ -14,8 +14,32 @@ class GalleryController extends Controller
         return view('galeri.index',compact('gallery'));
     }
 
-    public function create(){
+    public function edit($id){
+        $gallery = Gallery::find($id);
+        return view('galeri.edit',compact('gallery'));
+    }
 
+    public function update(Request $request, $id){
+
+        $request->validate([
+            'name'=>'required|string',
+            'image_broadcast'=>'required',
+        ]);
+        $galery = Gallery::where('id',$id)->first();
+        Storage::disk('public')->delete($galery->image);
+        $name = $request->name;
+        $image = $request->image_broadcast;
+
+        $imageExtension = $request->image_broadcast->getClientOriginalExtension();
+        $imageName = 'img_'.time().'.'.$imageExtension;
+        $path = $request->image_broadcast->storeAs('images',$imageName,'public');
+
+        Gallery::where('id',$id)
+        ->update([
+            'name'=>$request->name,
+            'image'=>$path, 
+        ]);
+        return redirect('/gallery')->with('status','Update Gambar Success !');
     }
 
     public function store(Request $request){

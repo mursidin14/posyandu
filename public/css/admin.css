@@ -16,7 +16,7 @@ body{
   
   .logout_btn{
     padding: 5px;
-    background: #19B3D3;
+    background:  #19B3D3;
     text-decoration: none;
     float: right;
     margin-top: -30px;
@@ -37,7 +37,7 @@ body{
     z-index: 1;
     top: 0;
     background: #343a40;
-    margin-top: 50px;
+    margin-top: 76px;
     padding-top: 30px;
     position: fixed;
     left: 0;
@@ -82,7 +82,7 @@ body{
   }
   
   .sidebar a:hover{
-    background: #ffffff;
+    background: /*#ff7ec9;*/ #ffffff;
     text-decoration: none;
   }
   
@@ -187,9 +187,9 @@ body{
     }
   
     .nav_bar{
-      background: #343a40;
+      background:#3e454d; /*#ff89ce*/ /*#343a40*/
       width: (100% - 0px);
-      margin-top: 50px;
+      margin-top: 70px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -211,11 +211,11 @@ body{
     }
   
     .nav_bar .nav_btn:hover{
-      color: #19B3D3;
+      color: #ffff; /*#19B3D3;*/
     }
   
     .mobile_nav_items{
-      background: #343a40;
+      background: #3e454d; /*#343a40;*/
       opacity: 85%;
       display: none;
     }
@@ -233,7 +233,7 @@ body{
     }
   
     .mobile_nav_items a:hover{
-      background: #19B3D3;
+      background: #ffff; /*#19B3D3;*/ 
     }
   
     .mobile_nav_items i{

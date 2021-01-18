@@ -61,9 +61,9 @@
         
         <div class="col">
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-secondary mr-1" data-toggle="modal" data-target="#exampleModal">
+                <!--<button type="button" class="btn btn-outline-secondary mr-1" data-toggle="modal" data-target="#exampleModal">
                     Tambah Data
-                </button>
+                </button>-->
                 <a href="/cetakrekap" type="button" class="btn btn-outline-dark" ><i class="fas fa-">Cetak Rekapan</i></a>
             </div>
         </div>

@@ -45,7 +45,7 @@
   </head>
   <body>
       <input type="checkbox" id="check">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" {{--style="background: #ff7ec9"--}}>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-secondary" {{--style="background: #ff7ec9"--}}>
         <div class="container">
         <a href="/dashboard" class="navbar-brand">
           <img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU</span>
@@ -84,8 +84,8 @@
     <!--mobile navigation bar start-->
     <div class="mobile_nav">
       <div class="nav_bar">
-        <img src="https://badoystudio.com/wp-content/uploads/2018/05/usericon.png" class="mobile_profile_image" alt="">
-        <i class="fa fa-bars nav_btn"></i>
+        <!-- <img src="https://badoystudio.com/wp-content/uploads/2018/05/usericon.png" class="mobile_profile_image" alt=""> -->
+        <p style="font-size: 16px; color: white">Menu</p><i class="fa fa-list nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
         <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>

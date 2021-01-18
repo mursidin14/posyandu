@@ -87,7 +87,7 @@ class KeuanganController extends Controller
                 'deskripsi'=>$request->deskripsi,
                 'jenis'=>$request->jenis,
             ]);
-            return redirect('/kasmasuk')->with('status','Data Berhasil Di Tambahkan');
+            return redirect('/kasmasuk')->with('status','Data Kas Masuk berhasil ditambahkan!');
         }
         else{
             Keuangan::create([
@@ -97,7 +97,7 @@ class KeuanganController extends Controller
                 'deskripsi'=>$request->deskripsi,
                 'jenis'=>$request->jenis,
                 ]);
-                return redirect('/kaskeluar')->with('status','Data Berhasil Di Tambahkan');
+                return redirect('/kaskeluar')->with('status','Data Kas Keluar berhasil ditambahkan!');
         }
     }
 
@@ -144,7 +144,7 @@ class KeuanganController extends Controller
                     'pengeluaran'=>$request->pengeluaran,
                     'deskripsi'=>$request->deskripsi,
                 ]);
-        return redirect('/keuangan')->with('status','Data Berhasil Di Update');
+        return redirect('/keuangan')->with('status','Data berhasil diupdate!');
     }
 
     /**
@@ -156,7 +156,7 @@ class KeuanganController extends Controller
     public function destroy($id)
     {
         Keuangan::destroy($id);
-        return redirect('/keuangan')->with('status','Delete Succes');
+        return redirect('/keuangan')->with('status','Data berhasil dihapus!');
     }
 
     public function kasmasuk(){

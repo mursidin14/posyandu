@@ -54,7 +54,7 @@ class PenimbanganController extends Controller
             'tb'=>'required',
         ]);
         Penimbangan::create($request->all());
-        return redirect('/penimbangan')->with('status','Data Berhasil Di Tambahkan');
+        return redirect('/penimbangan')->with('status','Data Penimbangan berhasil ditambahkan!');
     }
 
     /**
@@ -110,7 +110,7 @@ class PenimbanganController extends Controller
             'bb'=>$request->bb,
             'tb'=>$request->tb,
         ]);
-        return redirect('/penimbangan')->with('status','Data Berhasil Di Update');
+        return redirect('/penimbangan')->with('status','Data Penimbangan berhasil diupdate!');
 
     }
 
@@ -123,6 +123,6 @@ class PenimbanganController extends Controller
     public function destroy($id)
     {
         Penimbangan::destroy($id);
-        return redirect('/penimbangan')->with('status','Delete Succes');
+        return redirect('/penimbangan')->with('status','Data Penimbangan berhasil dihapus!');
     }
 }

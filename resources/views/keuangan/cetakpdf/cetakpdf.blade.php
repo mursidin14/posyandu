@@ -9,17 +9,17 @@
 </head>
 <body>
     <div style="text-align: center;">
-        <h3 style="text-align: center;">LAPORAN REKAPITULASI KAS </h3>
-        <h1 style="text-align: center;">POSYANDU SERUNI III </h1>
+        <h3 style="text-align: center;">LAPORAN REKAP KEUANGAN</h3>
+        <h1 style="text-align: center;">POSYANDU SERUNI 3</h1>
         <p style="text-align: center;"> {{date('d F Y',strtotime($dari))}} - {{date('d F Y',strtotime($sampai))}}</p>
         <hr>
        
     </div>
     <div class="table-responsive">
 		<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-            <thead style="background: #1cc88a">
+            <thead style="background: #fd6bc5" {{--#1cc88a--}}>
               <tr>
-                <th width="3%" scope="col">No</th>
+                <th width="3%" scope="col">No.</th>
                 <th width="15%" scope="col">Tanggal</th>
                 <th width="35%" scope="col">Uraian</th>
                 <th width="15%" scope="col">Pemasukan</th>
@@ -60,7 +60,7 @@
                     <td>Rp. <z class="pull-right"><?php echo number_format($saldo); ?>,00</z></td>
                 </tr>
                 @endforeach
-                <tr>
+                <tr style="background: silver;">
                     <td></td>
                     <td colspan="2"><center><strong>JUMLAH</strong></center></td>
 
@@ -73,11 +73,11 @@
     
     <div style="float: right;padding: 10px;">
     <p>Semarang, </p>
-    <p>Ketua Yayasan</p>
+    <p>Ketua Kader Posyandu</p>
         <br>
         <br>
         <br>
-    <p>Drs.H. Muhammad Hamzah</p>
+    <p>Ita Sujarwo</p>
     </div>
     </div>
 </body>

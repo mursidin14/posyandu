@@ -41,10 +41,11 @@ class BlogController extends Controller
         $request->validate([
             'tanggal_kegiatan'=>'required',
             'nama_kegiatan'=>'required',
+            'waktu'=>'required'
         ]);
         
         $blog = Jadwal::create($request->all());
-        return redirect('/blog')->with('status','Data Jadwal Berhasil Di Tambahkan');
+        return redirect('/blog')->with('status','Data Jadwal Pelayanan berhasil ditambahkan!');
     }
 
     /**
@@ -64,8 +65,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jadwal $jadwal)
+    public function edit($id)
     {
+        $jadwal = Jadwal::find($id);
         return view('blog.edit',compact('jadwal'));
     }
 
@@ -91,7 +93,7 @@ class BlogController extends Controller
                     'waktu'=>$request->waktu,
                     
                 ]);
-        return redirect('/blog')->with('status','Data Jadwal Berhasil Di Update');
+        return redirect('/blog')->with('status','Data Jadwal Pelayanan berhasil diupdate!');
     }
 
     /**
@@ -103,6 +105,6 @@ class BlogController extends Controller
     public function destroy($id)
     {
         Jadwal::destroy($id);
-        return redirect('/blog')->with('status','Delete Succes');
+        return redirect('/blog')->with('status','Data Jadwal Pelayanan berhasil dihapus!');
     }
 }

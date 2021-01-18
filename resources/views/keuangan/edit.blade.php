@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
+      <li class="breadcrumb-item"><a href="/keuangan" style="color: #fd6bc5">Data Keuangan</a></li>
+      <li class="breadcrumb-item"><a href="/kasmasuk" style="color: #fd6bc5">Kas Masuk</a></li>
+      <li class="breadcrumb-item"><a href="/kaskeluar" style="color: #fd6bc5">Kas Keluar</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
+    </ol>
+</nav>
 @php
 if($keuangan->pemasukan  == null){
     echo'<style>.hdn1{display:none;}</style>';
@@ -70,6 +79,6 @@ else {
         </div>
         @enderror
     </div>
-    <button type="submit" class="btn btn-outline-dark">Simpan Data</button>
+    <button type="submit" class="btn btn-outline-success">Simpan</button>
 </form>
 @endsection

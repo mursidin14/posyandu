@@ -13,7 +13,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Input Data Kas Keluar</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kas Keluar</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="pengeluaran">Kas Masuk</label>
+                            <label for="pengeluaran">Kas Keluar</label>
                             <input type="text" class="form-control @error('pengeluaran') is-invalid @enderror" name="pengeluaran"  id="pengeluaran" value="{{ old('pengeluaran') }}" placeholder="Rp." autocomplete="off">
                             @error('pengeluaran')
                             <div class="invalid-feedback">
@@ -63,7 +63,7 @@
                     </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-outline-dark">Simpan Data</button>
+                <button type="submit" class="btn btn-outline-success">Simpan</button>
             </form>
         </div>
       </div>
@@ -105,7 +105,7 @@
             <input type="text" name="dari" style="display: none" value="{{$dari}}">
             <input type="text" name="sampai" style="display: none" value="{{$sampai}}">
             <div class="dari">
-                <button type="submit" style="display: block;" class="btn btn-outline-dark" ><i class="fas fa-">Cetak PDF</i></button>
+                <button type="submit" style="display: block;" class="btn btn-outline-dark" ><i class="fas fa-">Cetak Hasil Filter</i></button>
             </div>
         </form>
     </div>
@@ -145,10 +145,10 @@
             <th scope="row">{{ $key + $keluar->firstItem()}}</th>
                 <td>{{date('d F Y',strtotime($item->tanggal))}}</td>
                 <td>{{$item->deskripsi}}</td>
-                <td>Rp.{{number_format(($item->pengeluaran) , 0, ',', '.')}},00</td>
+                <td>Rp. {{number_format(($item->pengeluaran) , 0, ',', '.')}},00</td>
                 {{-- <td>{{$sum}}</td> --}}
                 <td>
-                    <form action="/keuangan/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin Hapus Data?')">
+                    <form action="/keuangan/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
@@ -159,7 +159,7 @@
                 <tr style="background: silver;">
                     <td></td>
                     <td colspan="2"><center><strong>JUMLAH KAS KELUAR</strong></center></td>
-                    <td><strong>Rp.{{number_format(($jumlah) , 0, ',', '.')}},00</strong></td>
+                    <td><strong>Rp. {{number_format(($jumlah) , 0, ',', '.')}},00</strong></td>
                     <td></td>
                 </tr>
              

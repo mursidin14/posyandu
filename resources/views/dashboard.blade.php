@@ -66,7 +66,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Kas Pemasukan</div>
+                            Kas Masuk</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800"> Rp.{{number_format(($jumlahMasuk) , 0, ',', '.')}}</div>
                     </div>
                     <div class="col-auto">
@@ -88,7 +88,7 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Kas Pengeluaran
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Kas Keluar
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">

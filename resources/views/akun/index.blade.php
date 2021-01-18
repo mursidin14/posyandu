@@ -1,12 +1,23 @@
 @extends('layouts.admin')
 
 @section('content')
+<!--<<<<<<< HEAD-->
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
       <li class="breadcrumb-item active" aria-current="page">Data Akun User</li>
     </ol>
 </nav>
+<!--=======-->
+@if (session('status'))
+<div class="alert alert-success">
+        {{ session('status') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+</div>
+@endif
+{{-->>>>>>> eb8e3376f15335c8730886b0a3f0f2c7c59af3d1--}}
 <div class="">
     <div class="card border-left-primary shadow p-3 mb-5 bg-white rounded">
         <div class="d-flex justify-content-lg-end mb-3">

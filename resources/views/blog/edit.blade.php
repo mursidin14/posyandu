@@ -9,7 +9,7 @@
     </ol>
 </nav>
 <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
-<form action="/blog/{{$jadwal->id}}" method="post" enctype="multipart/form-data">
+<form action="/blog/{{$jadwal->id}}" method="POST" >
     @csrf
     @method('patch')
     <div class="form-group">

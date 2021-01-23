@@ -48,7 +48,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-secondary" {{--style="background: #ff7ec9"--}}>
         <div class="container">
         <a href="/dashboard" class="navbar-brand">
-          <img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU</span>
+          <img src = {{ asset('assets/img/POSYANDU.png') }}{{--"assets/img/POSYANDU.png"--}} alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

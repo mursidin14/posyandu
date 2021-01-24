@@ -22,6 +22,11 @@
             <form action="/keuangan" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('post')
+                <div class="form-group">
+                    <label for="">Direkap Oleh</label>
+                    <p>{{Auth::user()->name}}</p>
+                    <input type="number" name="user_id" value="{{ Auth::user()->id }}" hidden>
+                </div>
                 <input class=" form-control" name="jenis" type="text" style="display:none;" value="pemasukan">
                 <div class="row">
                     <div class="col">
@@ -134,7 +139,8 @@
           <tr>
             <th width="3%" scope="col">No</th>
             <th width="15%" scope="col">Tanggal</th>
-            <th width="50%" scope="col">Uraian</th>
+            <th width="15%" scope="col">Direkap oleh</th>
+            <th width="35%" scope="col">Uraian</th>
             <th width="15%" scope="col">Jumlah</th>
             <th width="10%" scope="col">Aksi</th>
           </tr>
@@ -144,6 +150,7 @@
             <tr>
             <th scope="row">{{ $key + $keluar->firstItem()}}</th>
                 <td>{{date('d F Y',strtotime($item->tanggal))}}</td>
+                <td>{{$item->user->name}}</td>
                 <td>{{$item->deskripsi}}</td>
                 <td>Rp. {{number_format(($item->pengeluaran) , 0, ',', '.')}},00</td>
                 {{-- <td>{{$sum}}</td> --}}
@@ -157,6 +164,7 @@
                 </td>
                 @endforeach
                 <tr style="background: silver;">
+                    <td></td>
                     <td></td>
                     <td colspan="2"><center><strong>JUMLAH KAS KELUAR</strong></center></td>
                     <td><strong>Rp. {{number_format(($jumlah) , 0, ',', '.')}},00</strong></td>

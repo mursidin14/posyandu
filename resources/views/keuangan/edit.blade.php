@@ -25,6 +25,11 @@ else {
     <div class="row" class="hide">
         <div class="col">
             <div class="form-group">
+                <div class="form-group">
+                    <label for="">Direkap Oleh</label>
+                    <p>{{Auth::user()->name}}</p>
+                    <input type="number" name="user_id" value="{{ Auth::user()->id }}" hidden>
+                </div>
                 <label for="tanggal">Tanggal Input Kas</label>
                 <div class="input-group mb-3">
                 <input class="dateselect form-control" name="tanggal" type="text" value="{{$keuangan->tanggal}}" autocomplete="off">

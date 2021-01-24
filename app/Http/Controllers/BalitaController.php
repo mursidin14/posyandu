@@ -45,6 +45,7 @@ class BalitaController extends Controller
             'pekerjaan'=>'required',
             'alamat'=>'required',
             'ket'=>'required',
+            'jenis_kelamin'=>'required',
         ]);
         Balita::create($request->all());
         return redirect('/balita')->with('status','Data Balita berhasil ditambahkan!');
@@ -92,6 +93,7 @@ class BalitaController extends Controller
             'pekerjaan'=>'required',
             'alamat'=>'required',
             'ket'=>'required',
+            'jenis_kelamin'=>'required'
         ]);
         Balita::where('id',$id)
                 ->update([
@@ -103,6 +105,7 @@ class BalitaController extends Controller
                     'pekerjaan'=>$request->pekerjaan,
                     'alamat'=>$request->alamat,
                     'ket'=>$request->ket,
+                    'jenis_kelamin'=>$request->jenis_kelamin,
                 ]);
         return redirect('/balita')->with('status','Data Balita berhasil diupdate!');
     }

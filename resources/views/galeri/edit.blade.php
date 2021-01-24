@@ -23,7 +23,11 @@
         <form action="/gallery/{{$gallery->id}}" method="post"  enctype="multipart/form-data">
             @csrf
             @method('patch')
-
+            <div class="form-group">
+                <label for="">Diupload Oleh</label>
+                <p>{{Auth::user()->name}}</p>
+                <input type="number" name="user_id" value="{{ Auth::user()->id }}" hidden>
+            </div>
             <label for="l_name">
                 Nama Gambar
             </label>
@@ -34,8 +38,6 @@
                     </div>
                 </div>
             </div>
-            
-          
             <label for="image_broadcast">Gambar</label>
             <div class="col-md-9">
                 <div class="form-group">

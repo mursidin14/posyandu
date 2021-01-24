@@ -15,5 +15,9 @@ class Keuangan extends Model
         'tanggal',
         'pengeluaran',
         'deskripsi',
+        'user_id'
     ];
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -74,7 +74,8 @@
               <tr>
                 <th width="3%" scope="col">No</th>
                 <th width="15%" scope="col">Tanggal</th>
-                <th width="35%" scope="col">Uraian</th>
+                <th width="15%" scope="col">Di Input Oleh</th>
+                <th width="20%" scope="col">Uraian</th>
                 <th width="15%" scope="col">Kas Masuk</th>
                 <th width="15%" scope="col">Kas Keluar</th>
                 <th width="15%" scope="col">Saldo</th>
@@ -93,6 +94,7 @@
                 <tr>
                 <th scope="row">{{ $key + $keuangan->firstItem()}}</th>
                     <td>{{date('d F Y',strtotime($item->tanggal))}}</td>
+                    <td>{{$item->user->name}}</td>
                     <td>{{$item->deskripsi}}</td>
                     <?php
                     if ($item->pemasukan == 0) {
@@ -114,6 +116,7 @@
                 </tr>
                 @endforeach
                 <tr style="background: silver;">
+                    <td></td>
                     <td></td>
                     <td colspan="2"><center><strong>JUMLAH</strong></center></td>
 

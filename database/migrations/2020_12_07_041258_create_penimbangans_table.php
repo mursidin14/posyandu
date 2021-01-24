@@ -16,9 +16,10 @@ class CreatePenimbangansTable extends Migration
         Schema::create('penimbangans', function (Blueprint $table) {
             $table->id();
             $table->string('tanggal_timbang');
+            $table->integer('user_id');
             $table->foreignId('balita_id')->constrained('balitas')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('bb');
-            $table->integer('tb');
+            $table->decimal('bb');
+            $table->decimal('tb');
             $table->timestamps();
         });
     }

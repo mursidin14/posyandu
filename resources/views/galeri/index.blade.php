@@ -26,7 +26,11 @@
         <form action="/gallery" method="post"  enctype="multipart/form-data">
             @csrf
             @method('post')
-
+            <div class="form-group">
+                <label for="">Diupload Oleh</label>
+                <p>{{Auth::user()->name}}</p>
+                <input type="number" name="user_id" value="{{ Auth::user()->id }}" hidden>
+            </div>
             <label for="l_name">
                 Nama Gambar
             </label>
@@ -37,8 +41,6 @@
                     </div>
                 </div>
             </div>
-            
-          
             <label for="image_broadcast">Gambar</label>
             <div class="col-md-9">
                 <div class="form-group">
@@ -68,20 +70,23 @@
 {{-- Gambar --}}
 <div class="row row-cols-2 row-cols-md-5 m-1">
     @foreach($gallery as $key => $item)
-        <div class="card m-3" style="width: 18rem;">
+        <div class="card m-1" style="width: 18rem;">
             <div class="row">
-                <div class="col">
+                <div class="col float-left">
                     <p class="float-left"><strong>{{$item->name}}</strong></p>
                 </div>
                 <div class="col">
-                    
                     <form class="float-right" method="post" action="/gallery/{{$item->id}}">
                         @csrf
                         @method('delete')
-                        <a href="/gallery/{{$item->id}}/edit" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                        <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+                        <a href="/gallery/{{$item->id}}/edit" class="btn btn-success p-2"><i class="fa fa-edit"></i></a>
+                        <button class="btn btn-danger p-2" type="submit"><i class="fa fa-trash"></i></button>
                     </form>
                 </div>
+            </div>
+            <hr>
+            <div class="float-right">
+                <p style="float: right;">Diupload Oleh {{$item->user->name}}</p>
             </div>
             <img src="{{ url('/storage/'.$item->image) }}" class="card-img-top" alt="...">
         </div>

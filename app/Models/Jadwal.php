@@ -13,6 +13,10 @@ class Jadwal extends Model
         'nama_kegiatan',
         'tanggal_kegiatan',
         'waktu',
- 
+        'user_id',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

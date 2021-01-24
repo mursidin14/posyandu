@@ -8,6 +8,8 @@ use App\Models\Jadwal;
 use App\Models\Penimbangan;
 use Illuminate\Http\Request;
 use App\Models\Keuangan;
+use Carbon\Carbon as CarbonCarbon;
+use Illuminate\Support\Carbon;
 
 class JadwalController extends Controller
 {
@@ -31,6 +33,12 @@ class JadwalController extends Controller
             $tinggiBadan[]= $mp->tb;
         }
 
+        $jenisKelaminLaki = Balita::where('jenis_kelamin','Laki-laki')->get();
+        $laki[] = count($jenisKelaminLaki);
+        
+        $jenisKelaminPerem = Balita::where('jenis_kelamin','Perempuan')->get();
+        $perem[] = count($jenisKelaminPerem);
+
         $gallery = Gallery::all();
 
         return view('welcome',compact('jadwal',
@@ -40,7 +48,9 @@ class JadwalController extends Controller
             'tinggiBadan',
             'beratBadan',
             'gallery',
-            'balita'
+            'balita',
+            'laki',
+            'perem',
         ));
     }
 

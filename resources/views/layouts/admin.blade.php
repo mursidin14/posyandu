@@ -102,7 +102,7 @@
           <a href="#">Link 3</a> --}}
         </div>
         <a href="/blog"><i class="fas fa-blog"></i><span>Data Jadwal Pelayanan</span></a>
-        <a href="/akun"><i class="fas fa-user"></i><span>Data Akun User</span></a>
+        <a href="/akun"><i class="fas fa-user"></i><span>Data Kader</span></a>
       </div>
     </div>
     <!--mobile navigation bar end-->
@@ -126,7 +126,7 @@
         <a href="#">Link 3</a> --}}
       </div>
       <a href="/blog"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
-      <a href="/akun"><i class="fas fa-user"></i><span>Data Akun User</span></a>
+      <a href="/akun"><i class="fas fa-user"></i><span>Kader</span></a>
    
     </div>
     <!--sidebar end-->

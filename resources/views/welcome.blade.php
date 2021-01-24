@@ -253,8 +253,12 @@
       </div>
     </section><!-- End Counts Section -->
     <div class="container">
-      <div class="panel">
-          <div id="chartNilai">ssss</div>
+      <div class="row">
+        <div class="col">
+          <div class="panel">
+              <div id="chartNilai"></div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -453,71 +457,133 @@
   <script src="assets/js/main.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script>
-  
-      //clickable Row
-      jQuery(document).ready(function($) {
-      $(".clickable-row").click(function() {
-          window.location = $(this).data("href");
-      });
-      });
-  
-      Highcharts.chart('chartNilai', {
+    Highcharts.chart('chartNilai', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Jenis Kelamin'
+    },
+    subtitle: {
+        text: 'Source: Posyandu Seruni'
+    },
+    xAxis: {
+        categories: ['Jenis Kelamin', 'Umur'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Population (Balita)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: 'Balita'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Laki Laki',
+        // data: [107, 31, 635, 203, 2]
+        data: {!! json_encode($laki) !!}
+    }, {
+        name: 'Perempuan',
+        // data: [133, 156, 947, 408, 6]
+        data: {!! json_encode($perem) !!}
+    }]
+});
+            
+  </script>
+  <script>
+    Highcharts.chart('chartNilai2', {
       chart: {
-          type: 'area'
+          type: 'bar'
       },
       title: {
-          text: 'Grafik Perkembangan Balita'
+          text: 'Jenis Kelamin'
       },
       subtitle: {
-          text: 'Sumber: posyanduseruni3.com'
+          text: 'Source: Posyandu Seruni'
       },
       xAxis: {
-          categories: {!!json_encode($chart)!!},
-          crosshair: true
+          categories: ['Jenis Kelamin', 'Umur'],
+          title: {
+              text: null
+          }
       },
       yAxis: {
           min: 0,
           title: {
-              text: 'Skala (kg/cm)'
+              text: 'Population (Balita)',
+              align: 'high'
+          },
+          labels: {
+              overflow: 'justify'
           }
       },
       tooltip: {
-          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-              '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
-          footerFormat: '</table>',
-          shared: true,
-          useHTML: true
+          valueSuffix: 'Balita'
       },
       plotOptions: {
-          column: {
-              pointPadding: 0.2,
-              borderWidth: 0
+          bar: {
+              dataLabels: {
+                  enabled: true
+              }
           }
       },
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -40,
+          y: 80,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor:
+              Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+          shadow: true
+      },
+      credits: {
+          enabled: false
+      },
       series: [{
-          name: 'Berat Badan',
-          data: {!!json_encode($beratBadan)!!}
-  
+          name: 'Laki Laki',
+          // data: [107, 31, 635, 203, 2]
+          data: {!! json_encode($laki) !!}
       }, {
-          name: 'Tinggi Badan',
-          data: {!!json_encode($tinggiBadan)!!}
-  
-      },]
-  });
-  /*var modal = document.getElementById("myModal");
-  var img = document.getElementByClassName("myImg");
-  var modalImg = document.getElementById("img01");
-  var captionText = document.getElementById("caption");
-  for (var i = 0; i < img.length; i++) {
-  var images = img[i];
-  images.onclick = function(event) {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  }
-}*/             
+          name: 'Perempuan',
+          // data: [133, 156, 947, 408, 6]
+          data: {!! json_encode($perem) !!}
+      }]
+  }); 
   </script>
+  
 </body>
 
 </html>

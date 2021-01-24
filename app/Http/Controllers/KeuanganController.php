@@ -86,6 +86,7 @@ class KeuanganController extends Controller
                 'pengeluaran'=>0,
                 'deskripsi'=>$request->deskripsi,
                 'jenis'=>$request->jenis,
+                'user_id'=>$request->user_id
             ]);
             return redirect('/kasmasuk')->with('status','Data Kas Masuk berhasil ditambahkan!');
         }
@@ -96,6 +97,7 @@ class KeuanganController extends Controller
                 'pengeluaran'=>$request->pengeluaran,
                 'deskripsi'=>$request->deskripsi,
                 'jenis'=>$request->jenis,
+                'user_id'=>$request->user_id
                 ]);
                 return redirect('/kaskeluar')->with('status','Data Kas Keluar berhasil ditambahkan!');
         }
@@ -143,6 +145,7 @@ class KeuanganController extends Controller
                     'tanggal'=>$request->tanggal,
                     'pengeluaran'=>$request->pengeluaran,
                     'deskripsi'=>$request->deskripsi,
+                    'user_id'=>$request->user_id
                 ]);
         return redirect('/keuangan')->with('status','Data berhasil diupdate!');
     }

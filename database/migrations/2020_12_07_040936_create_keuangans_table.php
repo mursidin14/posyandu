@@ -15,6 +15,7 @@ class CreateKeuangansTable extends Migration
     {
         Schema::create('keuangans', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('tanggal');
             $table->integer('pemasukan');
             $table->integer('pengeluaran');

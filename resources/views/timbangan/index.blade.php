@@ -15,6 +15,11 @@
             @csrf
             @method('post')
             <div class="form-group">
+                <label for="">Ditimbang Oleh</label>
+                <p>{{Auth::user()->name}}</p>
+                <input type="number" name="user_id" value="{{ Auth::user()->id }}" hidden>
+            </div>
+            <div class="form-group">
                 <label for="tanggal_timbang">Tanggal Penimbangan</label>
                 <div class="input-group mb-3">
                     <input class="dateselect form-control" name="tanggal_timbang" type="text" placeholder="Tahun-Bulan-Tanggal" autocomplete="off">
@@ -65,7 +70,7 @@
         </div>
         <div class="col">
             <div class="panel">
-                <div id="chartNilai">ssss</div>
+                <div id="chartNilai1">ssss</div>
             </div>
         </div>
     </div>
@@ -91,6 +96,7 @@
                 <th scope="col">Nama Balita</th>
                 <th scope="col">Berat Badan</th>
                 <th scope="col">Tinggi Badan</th>
+                <th scope="col">Ditimbang Oleh</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
@@ -103,6 +109,7 @@
                     <td >{{$item->balita->nama_balita}}</td>
                     <td>{{$item->bb}} kg</td>
                     <td>{{$item->tb}} cm</td>
+                    <td>{{$item->user->name}}</td>
                     <td>
                         <form action="/penimbangan/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf
@@ -125,6 +132,70 @@
 @section('footer')
     
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
+    Highcharts.chart('chartNilai1', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Jenis Kelamin'
+    },
+    subtitle: {
+        text: 'Source: Posyandu Seruni'
+    },
+    xAxis: {
+        categories: ['Jenis Kelamin', 'Umur'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Population (Balita)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: 'Balita'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Laki Laki',
+        // data: [107, 31, 635, 203, 2]
+        data: {!! json_encode($laki) !!}
+    }, {
+        name: 'Perempuan',
+        // data: [133, 156, 947, 408, 6]
+        data: {!! json_encode($perem) !!}
+    }]
+});
+            
+  </script>
 <script>
 
     //clickable Row

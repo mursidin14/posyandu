@@ -22,6 +22,7 @@ class CreateBalitasTable extends Migration
             $table->string('pendidikan');
             $table->string('pekerjaan');
             $table->string('alamat');
+            $table->string('jenis_kelamin');
             $table->string('ket');
             $table->timestamps();
         });

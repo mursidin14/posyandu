@@ -20,6 +20,7 @@ class Balita extends Model
         'pekerjaan',
         'alamat',
         'ket',
+        'jenis_kelamin',
     ];
     public function penimbangan(){
         return $this->hasMany(Penimbangan::class);

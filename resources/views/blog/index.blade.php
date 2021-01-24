@@ -25,6 +25,11 @@
         @csrf
         @method('post')
         <div class="form-group">
+          <label for="">Jadwal Dibuat Oleh</label>
+          <p>{{Auth::user()->name}}</p>
+          <input type="number" name="user_id" value="{{ Auth::user()->id }}" hidden>
+        </div>
+        <div class="form-group">
             <label for="tanggal_kegiatan">Tanggal Pelayanan</label>
             <div class="input-group mb-3">
                 <input autocomplete="off" class="dateselect form-control @error('tanggal_kegiatan') is-invalid @enderror" name="tanggal_kegiatan" type="text" placeholder="Tahun-Bulan-Tanggal" >
@@ -64,6 +69,7 @@
         <thead style="background: #fd6bc5">
           <tr>
             <th scope="col">No</th>
+            <th scope="col">Dibuat Oleh</th>
             <th scope="col">Tanggal Pelayanan</th>
             <th scope="col">Nama Pelayanan/Kegiatan</th>
             <th scope="col">Jam Pelayanan</th>
@@ -77,6 +83,7 @@
           @foreach ($jadwal as $item) 
           <tr>
           <th scope="row">{{$i++}}</th>
+          <td>{{$item->user->name}}</td>
           <td>{{date('d F Y',strtotime($item->tanggal_kegiatan))}}</td>
             <td>{{$item->nama_kegiatan}}</td>
             <td>{{$item->waktu}}</td>

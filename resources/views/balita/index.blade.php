@@ -55,6 +55,7 @@
                 <th scope="col">Nama Balita</th>
                 <th scope="col">Tempat Lahir</th>
                 <th scope="col">Tanggal Lahir</th>
+                <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Nama Orangtua</th>
                 <th scope="col">Pendidikan</th>
                 <th scope="col">Pekerjaan</th>
@@ -71,6 +72,7 @@
                     <td>{{$item->nama_balita}}</td>
                     <td>{{$item->tpt_lahir}}</td>
                     <td>{{date('d F Y',strtotime($item->tgl_lahir))}}</td>
+                    <td>{{$item->jenis_kelamin}}</td>
                     <td>{{$item->nama_orangtua}}</td>
                     <td>{{$item->pendidikan}}</td>
                     <td>{{$item->pekerjaan}}</td>

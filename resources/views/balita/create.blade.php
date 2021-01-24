@@ -52,6 +52,20 @@
                         </div>
                     </div>
                 </div>
+               
+                <div class="form-group">
+                    <label for="tgl_lahir">Jenis Kelamin</label>
+                    <select name="jenis_kelamin" class="custom-select mr-sm-2 @error('jenis_kelamin') is-invalid @enderror" id="inlineFormCustomSelect">
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                    @error('jenis_kelamin')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                </div>
+            
            
            
                 <div class="form-group mt-2">

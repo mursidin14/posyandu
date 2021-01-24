@@ -17,7 +17,7 @@ class PenimbanganController extends Controller
     public function index()
     {
         $balita = Balita::all();
-        $timbangan = Penimbangan::with('balita')->orderBy('tanggal_timbang', 'ASC')->paginate(10);
+        $timbangan = Penimbangan::with('balita','user')->orderBy('tanggal_timbang', 'ASC')->paginate(10);
         $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
@@ -26,8 +26,23 @@ class PenimbanganController extends Controller
             $beratBadan[]= $mp->bb;
             $tinggiBadan[]= $mp->tb;
         }
+
+        $jenisKelaminLaki = Balita::where('jenis_kelamin','Laki-laki')->get();
+        $laki[] = count($jenisKelaminLaki);
+        
+        $jenisKelaminPerem = Balita::where('jenis_kelamin','Perempuan')->get();
+        $perem[] = count($jenisKelaminPerem);
+
     
-        return view('timbangan.index',compact('timbangan','balita','chart','tinggiBadan','beratBadan'));
+        return view('timbangan.index',compact(
+            'timbangan',
+            'balita',
+            'chart',
+            'tinggiBadan',
+            'beratBadan',
+            'laki',
+            'perem',
+        ));
     }
 
     /**
@@ -52,6 +67,7 @@ class PenimbanganController extends Controller
             'balita_id'=>'required',
             'bb'=>'required',
             'tb'=>'required',
+            'user_id'=>'required'
         ]);
         Penimbangan::create($request->all());
         return redirect('/penimbangan')->with('status','Data Penimbangan berhasil ditambahkan!');

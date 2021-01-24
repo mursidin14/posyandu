@@ -37,6 +37,7 @@ class GalleryController extends Controller
         Gallery::where('id',$id)
         ->update([
             'name'=>$request->name,
+            'user_id'=>$request->user_id,
             'image'=>$path, 
         ]);
         return redirect('/gallery')->with('status','Data Galeri berhasil diupdate!');
@@ -50,7 +51,7 @@ class GalleryController extends Controller
         ]);
         $name = $request->name;
         $image = $request->image_broadcast;
-
+        
         $imageExtension = $request->image_broadcast->getClientOriginalExtension();
         $imageName = 'img_'.time().'.'.$imageExtension;
         $path = $request->image_broadcast->storeAs('images',$imageName,'public');
@@ -58,6 +59,7 @@ class GalleryController extends Controller
         $data = new Gallery();
         $data->name = $name;
         $data->image = $path;
+        $data->user_id = $request->user_id;
         $data->save();
         return redirect('/gallery')->with('status','Data Galeri berhasil ditambahkan!');
     }

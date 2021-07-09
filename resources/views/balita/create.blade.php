@@ -27,7 +27,6 @@
                     </div>
                     @enderror
                 </div>
-
                 <div class="row">
                     <div class="col-4">
                         <div class="form-group">
@@ -52,7 +51,6 @@
                         </div>
                     </div>
                 </div>
-               
                 <div class="form-group">
                     <label for="tgl_lahir">Jenis Kelamin</label>
                     <select name="jenis_kelamin" class="custom-select mr-sm-2 @error('jenis_kelamin') is-invalid @enderror" id="inlineFormCustomSelect">
@@ -65,44 +63,13 @@
                     </div>
                     @enderror
                 </div>
-            
-           
-           
-                <div class="form-group mt-2">
-                    <label for="nama_orangtua">Nama Orangtua</label>
-                    <input autocomplete="off" type="text" class="form-control @error('nama_orangtua') is-invalid @enderror" name="nama_orangtua"  id="nama_orangtua" value="{{ old('nama_orangtua') }}">
-                    @error('nama_orangtua')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
-                    <label for="pendidikan">Pendidikan</label>
-                    <input autocomplete="off" type="text" class="form-control @error('pendidikan') is-invalid @enderror" name="pendidikan"  id="pendidikan" value="{{ old('pendidikan') }}">
-                    @error('pendidikan')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
-                    <label for="pekerjaan">Pekerjaan</label>
-                    <input autocomplete="off" type="text" class="form-control @error('pekerjaan') is-invalid @enderror" name="pekerjaan"  id="nama" value="{{ old('pekerjaan') }}">
-                    @error('pekerjaan')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
-                    <label for="alamat">Alamat</label>
-                    <input autocomplete="off" type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"  id="alamat" value="{{ old('alamat') }}">
-                    @error('alamat')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
+                <div class="form-group">
+                    <label for="inlineFormCustomSelect">Nama OrangTua</label>
+                    <select name="orang_tua_id" class="custom-select mr-sm-2 @error('orang_tua_id') is-invalid @enderror" id="inlineFormCustomSelect">
+                        @foreach ($orangTua as $option)
+                            <option value="{{$option->id ?? null}}">{{$option->nama ?? null}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group mt-2">
                     <label for="ket">Keterangan</label>

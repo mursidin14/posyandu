@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KeuanganController;
+use App\Http\Controllers\OrangTuaController;
 use App\Http\Controllers\PenimbanganController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -35,6 +36,7 @@ Route::get('/dashboard', [DashboardController::class,'index']);
 
 //Route input Data Create Read Update Delete @resource
 Route::resource('/balita' ,BalitaController::class);
+Route::resource('/orangtua' ,OrangTuaController::class);
 Route::resource('/penimbangan' ,PenimbanganController::class);
 Route::resource('/keuangan' ,KeuanganController::class);
 

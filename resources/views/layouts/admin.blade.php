@@ -91,6 +91,7 @@
         <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
         <a href="/gallery"><i class="fas fa-image"></i><span>Galeri</span></a>
         <a href="/balita"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
+        <a href="/orangtua"><i class="fas fa-baby-carriage"></i><span>Data Orang Tua</span></a>
         <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
         <a class="dropdown-btn"><i class="fas fa-university"></i><span>Data Keuangan</span></a>
         <div class="dropdown-container">
@@ -115,6 +116,7 @@
       <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
       <a href="/gallery"><i class="fas fa-image"></i><span>Galeri</span></a>
       <a href="/balita"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
+      <a href="/orangtua"><i class="fas fa-baby-carriage"></i><span>Data Orang Tua</span></a>
       <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
       <a class="dropdown-btn" style="cursor: pointer;"><i class="fas fa-university"></i><span>Data Keuangan</span></a>
       <div class="dropdown-container">

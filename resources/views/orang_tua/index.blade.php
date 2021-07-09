@@ -30,7 +30,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Data Balita</li>
+      <li class="breadcrumb-item active" aria-current="page">Data Orang Tua</li>
     </ol>
 </nav>
 <div class="">
@@ -42,7 +42,7 @@
 <div class="">
     <div class="card border-left-primary shadow p-3 mb-5 bg-white rounded">
         <div class="d-flex justify-content-lg-end mb-3">
-            <a class="btn btn-outline-secondary" href="/balita/create"><span class="icon text">
+            <a class="btn btn-outline-secondary" href="/orangtua/create"><span class="icon text">
                 <i class="fas fa-plus"></i>
             </span>Tambah Data</a>
     
@@ -52,47 +52,37 @@
             <thead style="background: #fd6bc5" {{--#1cc88a--}}>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Balita</th>
-                <th scope="col">Tempat Lahir</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Jenis Kelamin</th>
-                <th scope="col">Nama Orangtua</th>
+                <th scope="col">Nama</th>
                 <th scope="col">Pendidikan</th>
                 <th scope="col">Pekerjaan</th>
-                {{-- <th scope="col">Alamat</th> --}}
-                {{-- <th scope="col">Keterangan</th> --}}
+                <th scope="col">Alamat</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
                 <?php $i=1; ?>
-                @foreach($balita as $key => $item)
+                @foreach($orangTua as $key => $item)
                 <tr>
-                <th scope="row">{{ $key + $balita->firstItem()}}</th>
-                    <td>{{$item->nama_balita}}</td>
-                    <td>{{$item->tpt_lahir}}</td>
-                    <td>{{date('d F Y',strtotime($item->tgl_lahir))}}</td>
-                    <td>{{$item->jenis_kelamin}}</td>
-                    <td>{{$item->orangtua->nama}}</td>
-                    <td>{{$item->orangtua->pendidikan}}</td>
-                    <td>{{$item->orangtua->pekerjaan}}</td>
-                    {{-- <td>{{$item->alamat}}</td> --}}
-                    {{-- <td>{{$item->ket}}</td> --}}
+                <th scope="row">{{ $key + $orangTua->firstItem()}}</th>
+                    <td>{{$item->nama}}</td>
+                    <td>{{$item->pendidikan}}</td>
+                    <td>{{$item->pekerjaan}}</td>
+                    <td>{{$item->alamat}}</td>
                     <td>
-                        <form action="/balita/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                        <form action="/orangtua/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
                         </form>
                         {{-- <a href="/balita/{{$item->id}}" class="btn btn-primary" ><i class="fas fa-search"></i></a>  --}}
-                        <a href="/balita/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
+                        <a href="/orangtua/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
                     </td>
                 </tr>
                 @endforeach
             </tbody>
             
         </table>
-        {{$balita->links()}}
+        {{$orangTua->links()}}
         </div>
     </div>
 </div>

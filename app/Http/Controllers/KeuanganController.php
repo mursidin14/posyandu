@@ -41,6 +41,7 @@ class KeuanganController extends Controller
          */
         return view('keuangan.index',compact('keuangan','masuk','keluar','saldo','dari','sampai'));
     }
+    
     public function periode(Request $request){
         $filterTanggal = Keuangan::all();
         $dari = $request->dari;

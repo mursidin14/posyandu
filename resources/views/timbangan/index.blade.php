@@ -20,25 +20,33 @@
                 <input type="number" name="user_id" value="{{ Auth::user()->id }}" hidden>
             </div>
             <div class="form-group">
-                <label for="tanggal_timbang">Tanggal Penimbangan</label>
-                <div class="input-group mb-3">
-                    <input class="dateselect form-control" name="tanggal_timbang" type="text" placeholder="Tahun-Bulan-Tanggal" autocomplete="off">
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
-                    </div>
-                    @error('tanggal_timbang')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
+                <label for="inlineFormCustomSelect">Tanggal Penimbangan</label>
+                <select name="tanggal_timbang" class="custom-select mr-sm-2 @error('tanggal_timbang') is-invalid @enderror" id="inlineFormCustomSelect">
+                    @php
+                        $value = '';
+                    @endphp
+                    @foreach ($tanggalPelayanan as $option)
+                        <option value="{{$option->tanggal_kegiatan ?? null}}">
+                            {{$option->tanggal_kegiatan." - ".$value = $option->nama_kegiatan ?? null}}
+                        
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group" hidden>
+                <label for="catatan">Catatan</label>
+                <input autocomplete="off" type="text" class="form-control @error('acara_kegiatan') is-invalid @enderror" name="acara_kegiatan"  id="acara_kegiatan" value="{{ $value }}">
+                @error('acara_kegiatan')
+                <div class="invalid-feedback">
+                    {{$message}}
                 </div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="inlineFormCustomSelect">Nama Balita</label>
                 <select name="balita_id" class="custom-select mr-sm-2 @error('balita_id') is-invalid @enderror" id="inlineFormCustomSelect">
-                    <option selected>Nama Balita</option>
                     @foreach ($balita as $option)
-                        <option value="{{$option->id}}">{{$option->nama_balita}}</option>
+                        <option value="{{$option->id ?? null}}">{{$option->nama_balita ?? null}}</option>
                     @endforeach
                 </select>
             </div>
@@ -65,6 +73,15 @@
                 </div>
                 @enderror
             </div>
+            <div class="form-group">
+                <label for="catatan">Catatan</label>
+                <input autocomplete="off" type="text" class="form-control @error('catatan') is-invalid @enderror" name="catatan"  id="catatan" value="{{ old('tb') }}">
+                @error('catatan')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>
         </form>
         </div>
@@ -85,9 +102,32 @@
         </div>
     @endif
 </div>
-<div class="">
+<div style="padding-bottom:200px">
     <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
         <div class="table-responsive">
+            <div class="col-6">
+                <form action="{{url('/filter/periodeTimbang')}}" method="get">
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group">
+                            <input class="form-control dateselect" type="text" name="dari" id="" autocomplete="off" value="{{$dari}}">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <input class="form-control dateselect" type="text" name="sampai" id="" autocomplete="off"value="{{$sampai}}">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-outline-secondary" ><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
             <thead style="background: #fd6bc5">
               <tr>
@@ -97,12 +137,13 @@
                 <th scope="col">Berat Badan</th>
                 <th scope="col">Tinggi Badan</th>
                 <th scope="col">Ditimbang Oleh</th>
+                <th scope="col">Nama Kegiatan</th>
+                <th scope="col">Catatan</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
                 @foreach($timbangan as $key => $item)
-                
                 <tr class="clickable-row" data-href="/penimbangan/{{$item->id}}">
                 <th scope="row" >{{ $key + $timbangan->firstItem()}}</th>
                     <td>{{date('d F Y',strtotime($item->tanggal_timbang))}}</td>
@@ -110,6 +151,8 @@
                     <td>{{$item->bb}} kg</td>
                     <td>{{$item->tb}} cm</td>
                     <td>{{$item->user->name}}</td>
+                    <td>{{$item->acara_kegiatan}}</td>
+                    <td>{{$item->catatan}}</td>
                     <td>
                         <form action="/penimbangan/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf
@@ -119,7 +162,6 @@
                         <a href="/penimbangan/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
                     </td>
                 </tr>
-         
                 @endforeach
             </tbody>
         </table>

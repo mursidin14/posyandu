@@ -21,6 +21,8 @@ class CreatePenimbangansTable extends Migration
             $table->decimal('bb');
             $table->decimal('tb');
             $table->timestamps();
+            $table->string('catatan');
+            $table->string('acara_kegiatan');
         });
     }
 

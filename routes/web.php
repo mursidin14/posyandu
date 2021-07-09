@@ -40,6 +40,9 @@ Route::resource('/orangtua' ,OrangTuaController::class);
 Route::resource('/penimbangan' ,PenimbanganController::class);
 Route::resource('/keuangan' ,KeuanganController::class);
 
+//filter Penimbangan
+Route::get('/filter/periodeTimbang',[PenimbanganController::class,'periodeTimbang']);
+
 //Route Bagian Keuangan
 Route::get('/kasmasuk',[KeuanganController::class,'kasmasuk']);
 Route::get('/kaskeluar',[KeuanganController::class,'kaskeluar']);

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 use Barryvdh\DomPDF\Facade as PDF;
 use App\Models\Balita;
+use App\Models\Jadwal;
 use App\Models\Penimbangan;
 
 use Illuminate\Http\Request;
 
 class PenimbanganController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +19,10 @@ class PenimbanganController extends Controller
      */
     public function index()
     {
+        $dari = '';
+        $sampai = '';
         $balita = Balita::all();
-        $timbangan = Penimbangan::with('balita','user')->orderBy('tanggal_timbang', 'ASC')->paginate(10);
+        $timbangan = Penimbangan::with('balita','user')->orderBy('tanggal_timbang', 'DESC')->paginate(10);
         $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
@@ -32,7 +37,7 @@ class PenimbanganController extends Controller
         
         $jenisKelaminPerem = Balita::where('jenis_kelamin','Perempuan')->get();
         $perem[] = count($jenisKelaminPerem);
-
+        $tanggalPelayanan = Jadwal::all();
     
         return view('timbangan.index',compact(
             'timbangan',
@@ -42,6 +47,47 @@ class PenimbanganController extends Controller
             'beratBadan',
             'laki',
             'perem',
+            'tanggalPelayanan',
+            'dari',
+            'sampai'
+        ));
+    }
+
+    public function periodeTimbang(Request $request){
+
+        $balita = Balita::all();
+        $filterTanggal = Penimbangan::all();
+        $dari = $request->dari;
+        $sampai = $request->sampai;
+        // $keuangan = Keuangan::paginate(10);
+        $timbangan =Penimbangan::with('balita','user')->whereDate('tanggal_timbang','>=',$dari)->whereDate('tanggal_timbang','<=',$sampai)->orderBy('tanggal_timbang','desc')->paginate(10);
+        $tanggalPelayanan = Jadwal::all();
+        $chart = [];
+        $tinggiBadan = [];
+        $beratBadan = [];
+        foreach($timbangan as $mp){
+            $chart[]= $mp->balita->nama_balita;
+            $beratBadan[]= $mp->bb;
+            $tinggiBadan[]= $mp->tb;
+        }
+
+        $jenisKelaminLaki = Balita::where('jenis_kelamin','Laki-laki')->get();
+        $laki[] = count($jenisKelaminLaki);
+        
+        $jenisKelaminPerem = Balita::where('jenis_kelamin','Perempuan')->get();
+        $perem[] = count($jenisKelaminPerem);
+        $tanggalPelayanan = Jadwal::all();
+        return view('timbangan.index',compact(
+            'timbangan',
+            'balita',
+            'chart',
+            'tinggiBadan',
+            'beratBadan',
+            'laki',
+            'perem',
+            'tanggalPelayanan',
+            'dari',
+            'sampai'
         ));
     }
 

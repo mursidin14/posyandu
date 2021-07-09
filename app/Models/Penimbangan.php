@@ -16,6 +16,8 @@ class Penimbangan extends Model
         'bb',
         'tb',
         'user_id',
+        'catatan',
+        'acara_kegiatan',
     ];
     public function balita(){
         return $this->belongsTo(Balita::class);

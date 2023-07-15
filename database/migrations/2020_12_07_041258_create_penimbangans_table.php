@@ -15,14 +15,14 @@ class CreatePenimbangansTable extends Migration
     {
         Schema::create('penimbangans', function (Blueprint $table) {
             $table->id();
-            $table->string('tanggal_timbang');
-            $table->integer('user_id');
-            $table->foreignId('balita_id')->constrained('balitas')->onDelete('cascade')->onUpdate('cascade');
-            $table->decimal('bb');
-            $table->decimal('tb');
+            $table->string('tanggal_timbang')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->foreignId('balita_id')->constrained('balitas')->onDelete('cascade')->onUpdate('cascade')->nullable();
+            $table->decimal('bb')->nullable();
+            $table->decimal('tb')->nullable();
             $table->timestamps();
-            $table->string('catatan');
-            $table->string('acara_kegiatan');
+            $table->string('catatan')->nullable();
+            $table->string('acara_kegiatan')->nullable();
         });
     }
 

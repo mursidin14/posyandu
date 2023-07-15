@@ -15,12 +15,12 @@ class CreateKeuangansTable extends Migration
     {
         Schema::create('keuangans', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('tanggal');
-            $table->integer('pemasukan');
-            $table->integer('pengeluaran');
-            $table->string('deskripsi');
-            $table->string('jenis');
+            $table->integer('user_id')->index()->nullable();
+            $table->string('tanggal')->nullable();
+            $table->integer('pemasukan')->nullable();
+            $table->integer('pengeluaran')->nullable();
+            $table->string('deskripsi')->nullable();
+            $table->string('jenis')->nullable();
             $table->timestamps();
         });
     }

@@ -15,12 +15,12 @@ class CreateBalitasTable extends Migration
     {
         Schema::create('balitas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_balita');
-            $table->string('tpt_lahir');
-            $table->string('tgl_lahir');
-            $table->string('jenis_kelamin');
-            $table->foreignId('orang_tua_id');
-            $table->string('ket');
+            $table->string('nama_balita')->nullable();
+            $table->string('tpt_lahir')->nullable();
+            $table->string('tgl_lahir')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->foreignId('orang_tua_id')->nullable();
+            $table->string('ket')->nullable();
             $table->timestamps();
         });
     }

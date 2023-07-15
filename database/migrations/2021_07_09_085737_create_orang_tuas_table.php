@@ -16,11 +16,11 @@ class CreateOrangTuasTable extends Migration
         Schema::create('orang_tuas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nama');
-            $table->string('pendidikan');
-            $table->string('pekerjaan');
-            $table->string('alamat');
-            $table->string('ket');
+            $table->string('nama')->nullable();
+            $table->string('pendidikan')->nullable();
+            $table->string('pekerjaan')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('ket')->nullable();
         });
     }
 

@@ -8,6 +8,11 @@ use PDF;
 
 class LaporanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request)
     {
         // Dapatkan filter bulan dan tahun dari request

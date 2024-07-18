@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class BalitaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
    
     //Menampilkan View Index
     public function index()

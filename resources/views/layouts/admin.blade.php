@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Posyandu') }}</title>
 
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">

@@ -70,7 +70,7 @@
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1><span>Selamat Datang di Website Posyandu Melati 2!</span></h1>
+            <h1><span>Selamat Datang di Website Posyandu Melati 2! Kelurahan Mawang</span></h1>
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
@@ -222,7 +222,7 @@
               <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                 <a href="{{ url('/storage/'.$item->image) }}" class="venobox" data-gall="gallery-item">
                   <p>{{$item->name}}</p>
-                  <img src="{{ url('/storage/'.$item->image) }}" alt="" class="img-fluid">
+                  <img src="{{ url('/storage/'.$item->image) }}" alt="kegiatan" class="img-fluid">
                 </a>
               </div>
             </div>
@@ -240,7 +240,7 @@
           <p>ORGANISASI POSYANDU MELATI 2</p>
         </div>
 
-        {{-- <center><img src="assets/img/gallery/struktur.jpg" alt="Stickman" width="1000px" height="500px"></center> --}}
+        <center><img src="assets/img/gallery/struktur.png" alt="Stickman" width="1000px" height="500px"></center>
 
       </div>
     </section><!-- End Team Section -->

@@ -56,6 +56,3 @@ Route::get('/',[JadwalController::class,'index']);
 
 
 Route::resource('/gallery', GalleryController::class);
-
-
-// Route::get('/febyy', [KeuanganController::class,'cobabalita']);

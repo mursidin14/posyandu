@@ -9,7 +9,12 @@ use Carbon\Carbon as CarbonCarbon;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 
-class OrangTuaController extends Controller{
+class OrangTuaController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     //Menampilkan View Index
     public function index()

@@ -15,6 +15,8 @@ class Penimbangan extends Model
         'balita_id',
         'bb',
         'tb',
+        'lika',
+        'lila',
         'user_id',
         'catatan',
         'acara_kegiatan',

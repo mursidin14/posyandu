@@ -52,15 +52,16 @@
             <thead style="background: #fd6bc5" {{--#1cc88a--}}>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Balita</th>
+                <th scope="col">Nik</th>
+                <th scope="col">Nama</th>
                 <th scope="col">Tempat Lahir</th>
                 <th scope="col">Tanggal Lahir</th>
                 <th scope="col">Jenis Kelamin</th>
+                <th scope="col">Umur</th>
                 <th scope="col">Nama Orangtua</th>
-                <th scope="col">Pendidikan</th>
-                <th scope="col">Pekerjaan</th>
-                {{-- <th scope="col">Alamat</th> --}}
-                {{-- <th scope="col">Keterangan</th> --}}
+                <th scope="col">Alamat</th>
+                <th scope="col">RT/RW</th>
+                <th scope="col">Keterangan</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
@@ -69,15 +70,16 @@
                 @foreach($balita as $key => $item)
                 <tr>
                 <th scope="row">{{ $key + $balita->firstItem()}}</th>
+                    <td>{{$item->nik}}</td>
                     <td>{{$item->nama_balita}}</td>
                     <td>{{$item->tpt_lahir}}</td>
-                    <td>{{date('d F Y',strtotime($item->tgl_lahir))}}</td>
+                    <td>{{$item->tgl_lahir}}</td>
                     <td>{{$item->jenis_kelamin}}</td>
+                    <td>{{$item->umur}}</td>
                     <td>{{$item->orangtua->nama}}</td>
-                    <td>{{$item->orangtua->pendidikan}}</td>
-                    <td>{{$item->orangtua->pekerjaan}}</td>
-                    {{-- <td>{{$item->alamat}}</td> --}}
-                    {{-- <td>{{$item->ket}}</td> --}}
+                    <td>{{$item->alamat}}</td>
+                    <td>{{$item->rt_rw}}</td>
+                    <td>{{$item->ket}}</td>
                     <td>
                         <form action="/balita/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf

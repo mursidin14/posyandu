@@ -57,7 +57,7 @@
             @enderror
             <div class="form-group">
                 <label for="bb">Berat Badan</label>
-                <input autocomplete="off" type="text" class="form-control @error('bb') is-invalid @enderror" name="bb"  id="bb" value="{{ old('bb') }}">
+                <input autocomplete="off" type="text" class="form-control @error('bb') is-invalid @enderror" name="bb"  id="bb" value="{{ old('bb') }}" placeholder="kg">
                 @error('bb')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -65,8 +65,8 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="tb">Tinggi Badan</label>
-                <input autocomplete="off" type="text" class="form-control @error('tb') is-invalid @enderror" name="tb"  id="tb" value="{{ old('tb') }}">
+                <label for="tb">Tinggi/Panjang Badan</label>
+                <input autocomplete="off" type="text" class="form-control @error('tb') is-invalid @enderror" name="tb"  id="tb" value="{{ old('tb') }}" placeholder="cm">
                 @error('tb')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -74,8 +74,26 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label for="lika">Lingkar Kepala</label>
+                <input autocomplete="off" type="text" class="form-control @error('lika') is-invalid @enderror" name="lika"  id="lika" value="{{ old('lika') }}" placeholder="cm">
+                @error('lika')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="lila">Lingkar Lengan</label>
+                <input autocomplete="off" type="text" class="form-control @error('lila') is-invalid @enderror" name="lila"  id="lila" value="{{ old('lila') }}" placeholder="cm">
+                @error('lila')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label for="catatan">Catatan</label>
-                <input autocomplete="off" type="text" class="form-control @error('catatan') is-invalid @enderror" name="catatan"  id="catatan" value="{{ old('tb') }}">
+                <input autocomplete="off" type="text" class="form-control @error('catatan') is-invalid @enderror" name="catatan"  id="catatan" value="{{ old('tb') }}" placeholder="keterangan">
                 @error('catatan')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -84,11 +102,6 @@
             </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>
         </form>
-        </div>
-        <div class="col">
-            <div class="panel">
-                <div id="chartNilai1">ssss</div>
-            </div>
         </div>
     </div>
 </div>
@@ -136,6 +149,8 @@
                 <th scope="col">Nama Balita</th>
                 <th scope="col">Berat Badan</th>
                 <th scope="col">Tinggi Badan</th>
+                <th scope="col">Lingkar Kepala</th>
+                <th scope="col">Lingkar Lengan</th>
                 <th scope="col">Ditimbang Oleh</th>
                 <th scope="col">Nama Kegiatan</th>
                 <th scope="col">Catatan</th>
@@ -150,6 +165,8 @@
                     <td >{{$item->balita->nama_balita}}</td>
                     <td>{{$item->bb}} kg</td>
                     <td>{{$item->tb}} cm</td>
+                    <td>{{$item->lika}} cm</td>
+                    <td>{{$item->lila}} cm</td>
                     <td>{{$item->user->name}}</td>
                     <td>{{$item->acara_kegiatan}}</td>
                     <td>{{$item->catatan}}</td>
@@ -172,126 +189,4 @@
 @endsection
 
 @section('footer')
-    
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script>
-    Highcharts.chart('chartNilai1', {
-    chart: {
-        type: 'bar'
-    },
-    title: {
-        text: 'Jenis Kelamin'
-    },
-    subtitle: {
-        text: 'Source: Posyandu Seruni'
-    },
-    xAxis: {
-        categories: ['Jenis Kelamin', 'Umur'],
-        title: {
-            text: null
-        }
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Population (Balita)',
-            align: 'high'
-        },
-        labels: {
-            overflow: 'justify'
-        }
-    },
-    tooltip: {
-        valueSuffix: 'Balita'
-    },
-    plotOptions: {
-        bar: {
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor:
-            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-        shadow: true
-    },
-    credits: {
-        enabled: false
-    },
-    series: [{
-        name: 'Laki Laki',
-        // data: [107, 31, 635, 203, 2]
-        data: {!! json_encode($laki) !!}
-    }, {
-        name: 'Perempuan',
-        // data: [133, 156, 947, 408, 6]
-        data: {!! json_encode($perem) !!}
-    }]
-});
-            
-  </script>
-<script>
-
-    //clickable Row
-    jQuery(document).ready(function($) {
-    $(".clickable-row").click(function() {
-        window.location = $(this).data("href");
-    });
-    });
-
-    //Source Code Chart
-    Highcharts.chart('chartNilai', {
-    chart: {
-        type: 'line'
-    },
-    title: {
-        text: 'Grafik Data Balita'
-    },
-    subtitle: {
-        text: 'Sumber: posyanduseruni3.com'
-    },
-    xAxis: {
-        categories: {!!json_encode($chart)!!},
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'BB/TB (kg/cm)'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
-    },
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    series: [{
-        name: 'Berat Badan',
-        data: {!!json_encode($beratBadan)!!}
-
-    }, {
-        name: 'Tinggi Badan',
-        data: {!!json_encode($tinggiBadan)!!}
-
-    },]
-});
-              
-</script>
 @endsection

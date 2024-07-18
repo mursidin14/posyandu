@@ -88,22 +88,15 @@
         <p style="font-size: 16px; color: white">Menu</p><i class="fa fa-list nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-        <a href="/gallery"><i class="fas fa-image"></i><span>Galeri</span></a>
-        <a href="/balita"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
-        <a href="/orangtua"><i class="fas fa-baby-carriage"></i><span>Data Orang Tua</span></a>
-        <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
-        <a class="dropdown-btn"><i class="fas fa-university"></i><span>Data Keuangan</span></a>
-        <div class="dropdown-container">
-          <a href="/kasmasuk"><i class="fas fa-plus-square"></i><span>Kas Masuk</span></a>
-          <a href="/kaskeluar"><i class="fas fa-minus-square"></i><span>Kas Keluar </span></a>
-          <a href="/keuangan"><i class="fas fa-sort-amount-up"></i><span>Rekapitulasi</span></a>
-          {{-- <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a> --}}
-        </div>
-        <a href="/blog"><i class="fas fa-blog"></i><span>Data Jadwal Pelayanan</span></a>
-        <a href="/akun"><i class="fas fa-user"></i><span>Data Kader</span></a>
+        <a href="/dashboard" class="{{ request()->is('dashboard') ? 'active-side' : '' }}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/balita" class="{{ request()->is('balita') ? 'active-side' : '' }}"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
+        <a href="/imunisasi" class="{{ request()->is('imunisasi') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Imunisasi</span></a>
+        <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Orang Tua</span></a>
+        <a href="/penimbangan" class="{{ request()->is('penimbangan') ? 'active-side' : '' }}"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
+        <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
+        <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
+      <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
+      <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
       </div>
     </div>
     <!--mobile navigation bar end-->
@@ -113,22 +106,15 @@
         <img src="https://badoystudio.com/wp-content/uploads/2018/05/usericon.png" class="profile_image" alt="">
         <h4>Admin</h4>
       </div> --}}
-      <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-      <a href="/gallery"><i class="fas fa-image"></i><span>Galeri</span></a>
-      <a href="/balita"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
-      <a href="/orangtua"><i class="fas fa-baby-carriage"></i><span>Data Orang Tua</span></a>
-      <a href="/penimbangan"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
-      <a class="dropdown-btn" style="cursor: pointer;"><i class="fas fa-university"></i><span>Data Keuangan</span></a>
-      <div class="dropdown-container">
-        <a href="/kasmasuk"><i class="fas fa-plus-square"></i><span>Kas Masuk</span></a>
-        <a href="/kaskeluar"><i class="fas fa-minus-square"></i><span>Kas Keluar </span></a>
-        <a href="/keuangan"><i class="fas fa-sort-amount-up"></i><span>Rekapitulasi</span></a>
-        {{-- <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a> --}}
-      </div>
-      <a href="/blog"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
-      <a href="/akun"><i class="fas fa-user"></i><span>Kader</span></a>
+      <a href="/dashboard" class="{{ request()->is('dashboard') ? 'active-side' : '' }}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="/balita" class="{{ request()->is('balita') ? 'active-side' : '' }}"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
+      <a href="/imunisasi" class="{{ request()->is('imunisasi') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Imunisasi</span></a>
+      <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Orang Tua</span></a>
+      <a href="/penimbangan" class="{{ request()->is('penimbangan') ? 'active-side' : '' }}"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
+      <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
+      <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
+      <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
+      <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
    
     </div>
     <!--sidebar end-->

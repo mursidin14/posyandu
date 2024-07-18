@@ -53,8 +53,6 @@
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
-                <th scope="col">Pendidikan</th>
-                <th scope="col">Pekerjaan</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">Aksi</th>
               </tr>
@@ -65,8 +63,6 @@
                 <tr>
                 <th scope="row">{{ $key + $orangTua->firstItem()}}</th>
                     <td>{{$item->nama}}</td>
-                    <td>{{$item->pendidikan}}</td>
-                    <td>{{$item->pekerjaan}}</td>
                     <td>{{$item->alamat}}</td>
                     <td>
                         <form action="/orangtua/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">

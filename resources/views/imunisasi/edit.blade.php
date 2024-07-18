@@ -4,23 +4,23 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
-      <li class="breadcrumb-item"><a href="/penimbangan" style="color: #fd6bc5">Data Penimbangan</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Edit Data Penimbangan</li>
+      <li class="breadcrumb-item"><a href="/imunisasi" style="color: #fd6bc5">Data Imunisasi</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Edit Data Imunisasi</li>
     </ol>
 </nav>
 <div class="card shadow p-3 mb-5 bg-white rounded">
         <div class="col-md-3">
-        <form action="/penimbangan/{{$penimbangan->id}}" method="post" enctype="multipart/form-data">
+        <form action="/imunisasi/{{$imunisasi->id}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
             <div class="form-group">
-                <label for="tanggal_timbang">Tanggal Penimbangan</label>
+                <label for="tanggal_imun">Tanggal Imunisasi</label>
                 <div class="input-group mb-3">
-                <input class="dateselect form-control" name="tanggal_timbang" type="text" value="{{$penimbangan->tanggal_timbang}}">
+                <input class="dateselect form-control" name="tanggal_imun" type="text" value="{{$imunisasi->tanggal_imun}}">
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
                     </div>
-                    @error('tanggal_timbang')
+                    @error('tanggal_imun')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>
@@ -30,7 +30,7 @@
             <div class="form-group">
                 <label for="inlineFormCustomSelect">Nama Balita</label>
                 <select name="balita_id" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option value="{{$penimbangan->balita->id}}" selected>{{$penimbangan->balita->nama_balita}}</option>
+                    <option value="{{$imunisasi->balita->id}}" selected>{{$imunisasi->balita->nama_balita}}</option>
                 </select>
             </div>
             <div class="form-group">
@@ -46,24 +46,6 @@
                 <label for="tb">Tinggi Badan</label>
                 <input type="text" class="form-control @error('tb') is-invalid @enderror" name="tb"  id="tb" value="{{ $penimbangan->tb }}">
                 @error('tb')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label for="lika">Lingkar Kepala</label>
-                <input type="text" class="form-control @error('lika') is-invalid @enderror" name="lika"  id="lika" value="{{ $penimbangan->lika }}">
-                @error('lika')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
-            </div>
-            <div class="form-group">
-                <label for="lila">Lingkar Lengan</label>
-                <input type="text" class="form-control @error('lila') is-invalid @enderror" name="lila"  id="lila" value="{{ $penimbangan->lila }}">
-                @error('lila')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>

@@ -28,36 +28,9 @@
                     @enderror
                 </div>
                 <div class="form-group mt-2">
-                    <label for="pendidikan">Pendidikan</label>
-                    <input type="text" class="form-control @error('pendidikan') is-invalid @enderror" name="pendidikan"  id="pendidikan" value="{{ $orangTua->pendidikan }}">
-                    @error('pendidikan')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
-                    <label for="pekerjaan">Pekerjaan</label>
-                    <input type="text" class="form-control @error('pekerjaan') is-invalid @enderror" name="pekerjaan"  id="nama" value="{{ $orangTua->pekerjaan }}">
-                    @error('pekerjaan')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
                     <label for="alamat">Alamat</label>
                     <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"  id="alamat" value="{{ $orangTua->alamat }}">
                     @error('alamat')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
-                    <label for="ket">Keterangan</label>
-                    <textarea type="text" class="form-control @error('ket') is-invalid @enderror" name="ket"  id="nama" value="">{{ $orangTua->ket }}</textarea>
-                    @error('ket')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>
@@ -69,10 +42,6 @@
     </div>
 </div>
 </div>
-<script type="text/javascript">
-    $('.date').datepicker({  
-       format: 'mm-dd-yyyy'
-     });  
-</script>
+
 
 @endsection

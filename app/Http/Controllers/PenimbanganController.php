@@ -26,10 +26,14 @@ class PenimbanganController extends Controller
         $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
+        $lingkarKepala = [];
+        $lingkarLengan = [];
         foreach($timbangan as $mp){
             $chart[]= $mp->balita->nama_balita;
             $beratBadan[]= $mp->bb;
             $tinggiBadan[]= $mp->tb;
+            $lingkarKepala[] = $mp->lika;
+            $lingkarLengan[] = $mp->lila;
         }
 
         $jenisKelaminLaki = Balita::where('jenis_kelamin','Laki-laki')->get();
@@ -45,6 +49,8 @@ class PenimbanganController extends Controller
             'chart',
             'tinggiBadan',
             'beratBadan',
+            'lingkarKepala',
+            'lingkarLengan',
             'laki',
             'perem',
             'tanggalPelayanan',
@@ -65,10 +71,14 @@ class PenimbanganController extends Controller
         $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
+        $lingkarKepala = [];
+        $lingkarLengan = [];
         foreach($timbangan as $mp){
             $chart[]= $mp->balita->nama_balita;
             $beratBadan[]= $mp->bb;
             $tinggiBadan[]= $mp->tb;
+            $lingkarKepala[] = $mp->lika;
+            $lingkarLengan[] = $mp->lila;
         }
 
         $jenisKelaminLaki = Balita::where('jenis_kelamin','Laki-laki')->get();
@@ -83,6 +93,8 @@ class PenimbanganController extends Controller
             'chart',
             'tinggiBadan',
             'beratBadan',
+            'lingkarKepala',
+            'lingkarLengan',
             'laki',
             'perem',
             'tanggalPelayanan',
@@ -113,6 +125,8 @@ class PenimbanganController extends Controller
             'balita_id'=>'required',
             'bb'=>'required',
             'tb'=>'required',
+            'lika'=>'required',
+            'lila'=>'required',
             'user_id'=>'required'
         ]);
         Penimbangan::create($request->all());
@@ -131,11 +145,15 @@ class PenimbanganController extends Controller
         $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
+        $lingkarKepala = [];
+        $lingkarLengan = [];
         $tanggal =[];
         foreach($penimbangan as $mp){
             $chart[]= $mp->balita->nama_balita;
             $beratBadan[]= $mp->bb;
             $tinggiBadan[]= $mp->tb;
+            $lingkarKepala[] = $mp->lika;
+            $lingkarLengan[] = $mp->lila;
         }
         return view('timbangan.detail',compact('penimbangan','chart','beratBadan','tinggiBadan'));
     }
@@ -165,12 +183,16 @@ class PenimbanganController extends Controller
             'balita_id'=>'required',
             'bb'=>'required',
             'tb'=>'required',
+            'lika'=>'required',
+            'lila'=>'required',
         ]);
         Penimbangan::where('id',$id)
         ->update([
             'balita_id'=>$request->balita_id,
             'bb'=>$request->bb,
             'tb'=>$request->tb,
+            'lika'=>$request->lika,
+            'lila'=>$request->lila,
         ]);
         return redirect('/penimbangan')->with('status','Data Penimbangan berhasil diupdate!');
 

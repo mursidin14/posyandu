@@ -8,6 +8,7 @@ use App\Models\Jadwal;
 use App\Models\Penimbangan;
 use Illuminate\Http\Request;
 use App\Models\Keuangan;
+use App\Models\User;
 use Carbon\Carbon as CarbonCarbon;
 use Illuminate\Support\Carbon;
 
@@ -24,6 +25,8 @@ class JadwalController extends Controller
         $timbangan = Penimbangan::with('balita')->orderBy('tanggal_timbang','ASC')->paginate(100);
         $balita = Balita::all();
         $countBalita = count($balita);
+        $kader = User::all();
+        $countKader = count($kader);
         $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
@@ -42,6 +45,7 @@ class JadwalController extends Controller
         $gallery = Gallery::all();
 
         return view('welcome',compact('jadwal',
+            'countKader',
             'countBalita',
             'timbangan',
             'chart',

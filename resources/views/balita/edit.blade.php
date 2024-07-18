@@ -19,6 +19,15 @@
                 @csrf
                 @method('patch')
                 <div class="form-group">
+                    <label for="nik">Nik Balita</label>
+                    <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik"  id="nik" value="{{ $balita->nik }}">
+                    @error('nama_balita')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <label for="nama">Nama Balita</label>
                     <input type="text" class="form-control @error('nama_balita') is-invalid @enderror" name="nama_balita"  id="nama_balita" value="{{ $balita->nama_balita }}">
                     @error('nama_balita')
@@ -40,11 +49,22 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-4">
                         <div class="form-group">
                             <label for="tgl_lahir">Tanggal Lahir</label>
-                            <input type="text" class="form-control date @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir"  id="tgl_lahir" value="{{ $balita->tgl_lahir }}">
+                            <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir"  id="tgl_lahir" value="{{ $balita->tgl_lahir }}">
                             @error('tgl_lahir')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="umur">Umur</label>
+                            <input type="text" class="form-control @error('umur') is-invalid @enderror" name="umur"  id="umur" value="{{ $balita->umur }}">
+                            @error('umur')
                             <div class="invalid-feedback">
                                 {{$message}}
                             </div>
@@ -56,8 +76,8 @@
                 <div class="form-group">
                     <label for="tgl_lahir">Jenis Kelamin</label>
                     <select name="jenis_kelamin" class="custom-select mr-sm-2 @error('jenis_kelamin') is-invalid @enderror" id="inlineFormCustomSelect">
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
                     </select>
                     @error('jenis_kelamin')
                     <div class="invalid-feedback">
@@ -74,6 +94,30 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"  id="alamat" value="{{ $balita->alamat }}">
+                            @error('alamat')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="rt_rw">RT/RW</label>
+                            <input type="text" class="form-control @error('rt_rw') is-invalid @enderror" name="rt_rw"  id="rt_rw" value="{{ $balita->rt_rw }}">
+                            @error('rt_rw')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group mt-2">
                     <label for="ket">Keterangan</label>
                     <textarea type="text" class="form-control @error('ket') is-invalid @enderror" name="ket"  id="nama" value="">{{ $balita->ket }}</textarea>
@@ -89,10 +133,5 @@
     </div>
 </div>
 </div>
-<script type="text/javascript">
-    $('.date').datepicker({  
-       format: 'mm-dd-yyyy'
-     });  
-</script>
 
 @endsection

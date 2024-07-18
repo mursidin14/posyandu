@@ -19,7 +19,7 @@ class OrangTuaController extends Controller{
     }
 
       //Menampilkan View Create
-      public function create()
+      public function create() 
       {
           $orangTua = OrangTua::all();
           return view('orang_tua.create',compact('orangTua'));
@@ -31,10 +31,8 @@ class OrangTuaController extends Controller{
       {
             $request->validate([
                 'nama'=>'required',
-                'pendidikan'=>'required',
-                'pekerjaan'=>'required',
                 'alamat'=>'required',
-                'ket'=>'required',
+                // 'ket'=>'required',
             ]);
             OrangTua::create($request->all());
             return redirect('/orangtua')->with('status','Data Orang Tua berhasil ditambahkan!');
@@ -58,18 +56,14 @@ class OrangTuaController extends Controller{
       {
           $request->validate([
               'nama'=>'required',
-              'pendidikan'=>'required',
-              'pekerjaan'=>'required',
               'alamat'=>'required',
-              'ket'=>'required',
+            //   'ket'=>'required',
           ]);
           OrangTua::where('id',$id)
                   ->update([
                       'nama'=>$request->nama,
-                      'pendidikan'=>$request->pendidikan,
-                      'pekerjaan'=>$request->pekerjaan,
                       'alamat'=>$request->alamat,
-                      'ket'=>$request->ket,
+                    //   'ket'=>$request->ket,
                   ]);
           return redirect('/orangtua')->with('status','Data Orang Tua berhasil diupdate!');
       }

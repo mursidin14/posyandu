@@ -23,33 +23,30 @@ class AllSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('1234'),
+            'type' => 'admin'
         ]);
         // Menginput Data Palsu Ke Database
-        for ($i = 0; $i <= 50; $i++) {
+        for ($i = 0; $i <= 10; $i++) {
             if ($i % 2) {
-                $pendidikan = 'SMA';
                 $jenis = 'Laki-Laki';
             } else {
-                $pendidikan = 'Sarjana';
                 $jenis = 'Perempuan';
             }
 
             OrangTua::create([
                 'nama' => $faker->name(),
-                'pendidikan' => $pendidikan,
-                'pekerjaan' => $faker->jobTitle(),
                 'alamat' => $faker->address(),
                 'ket' => null
             ]);
 
-            Balita::create([
-                'nama_balita' => $faker->name,
-                'tpt_lahir' => $faker->date(),
-                'tgl_lahir' => $faker->date(),
-                'orang_tua_id' => rand(1, 2),
-                'jenis_kelamin' => $jenis,
-                'ket' => null,
-            ]);
+            // Balita::create([
+            //     'nama_balita' => $faker->name,
+            //     'tpt_lahir' => $faker->date(),
+            //     'tgl_lahir' => $faker->date(),
+            //     'orang_tua_id' => rand(1, 2),
+            //     'jenis_kelamin' => $jenis,
+            //     'ket' => null,
+            // ]);
         }
     }
 }

@@ -20,6 +20,8 @@ class CreatePenimbangansTable extends Migration
             $table->foreignId('balita_id')->constrained('balitas')->onDelete('cascade')->onUpdate('cascade')->nullable();
             $table->decimal('bb')->nullable();
             $table->decimal('tb')->nullable();
+            $table->decimal('lika')->nullable();
+            $table->decimal('lila')->nullable();
             $table->timestamps();
             $table->string('catatan')->nullable();
             $table->string('acara_kegiatan')->nullable();

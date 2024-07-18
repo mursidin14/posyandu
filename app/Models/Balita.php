@@ -12,12 +12,16 @@ class Balita extends Model
     protected $primaryKey = "id";
     protected $fillable = [
         'id',
+        'nik',
         'nama_balita',
         'tpt_lahir',
         'tgl_lahir',
-        'orang_tua_id',
-        'ket',
         'jenis_kelamin',
+        'umur',
+        'orang_tua_id',
+        'alamat',
+        'rt_rw',
+        'ket',
     ];
 
     public function orangtua(){
@@ -25,5 +29,8 @@ class Balita extends Model
     }
     public function penimbangan(){
         return $this->hasMany(Penimbangan::class);
+    }
+    public function imunisasi(){
+        return $this->hasMany(Imunisasi::class);
     }
 }

@@ -17,7 +17,7 @@ class BalitaController extends Controller
     }
 
   
-    //Menampilkan View Create
+    //Menampilkan View Create 
     public function create()
     {
         $orangTua = OrangTua::all();
@@ -30,11 +30,15 @@ class BalitaController extends Controller
     {
         $request->validate([
             'nama_balita'=>'required',
+            'nik'=>'required',
             'tpt_lahir'=>'required',
             'tgl_lahir'=>'required',
-            'orang_tua_id'=>'required',
-            'ket'=>'required',
             'jenis_kelamin'=>'required',
+            'umur'=>'required',
+            'orang_tua_id'=>'required',
+            'alamat'=>'required',
+            'rt_rw'=>'required',
+            'ket'=>'required',
         ]);
         Balita::create($request->all());
         return redirect('/balita')->with('status','Data Balita berhasil ditambahkan!');
@@ -60,21 +64,28 @@ class BalitaController extends Controller
     {
         $request->validate([
             'nama_balita'=>'required',
+            'nik'=>'required',
             'tpt_lahir'=>'required',
             'tgl_lahir'=>'required',
+            'jenis_kelamin'=>'required',
+            'umur'=>'required',
             'orang_tua_id'=>'required',
+            'alamat'=>'required',
+            'rt_rw'=>'required',
             'ket'=>'required',
-            'jenis_kelamin'=>'required'
         ]);
         Balita::where('id',$id)
                 ->update([
                     'nama_balita'=>$request->nama_balita,
+                    'nik'=>$request->nik,
                     'tpt_lahir'=>$request->tpt_lahir,
                     'tgl_lahir'=>$request->tgl_lahir,
                     'orang_tua_id'=>$request->orang_tua_id,
-        
-                    'ket'=>$request->ket,
                     'jenis_kelamin'=>$request->jenis_kelamin,
+                    'umur'=>$request->umur,
+                    'alamat'=>$request->alamat,
+                    'rt_rw'=>$request->rt_rw,
+                    'ket'=>$request->ket,
                 ]);
         return redirect('/balita')->with('status','Data Balita berhasil diupdate!');
     }

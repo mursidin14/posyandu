@@ -17,8 +17,6 @@ class CreateOrangTuasTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nama')->nullable();
-            $table->string('pendidikan')->nullable();
-            $table->string('pekerjaan')->nullable();
             $table->string('alamat')->nullable();
             $table->string('ket')->nullable();
         });

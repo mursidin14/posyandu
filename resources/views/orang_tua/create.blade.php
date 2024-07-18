@@ -20,26 +20,8 @@
                 @method('post')
                 <div class="form-group">
                     <label for="nama_balita">Nama Orang Tua</label>
-                    <input autocomplete="off" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ old('nama') }}">
+                    <input autocomplete="off" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ old('nama') }}" placeholder="Rudi & Siti">
                     @error('nama')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
-                    <label for="pendidikan">Pendidikan</label>
-                    <input autocomplete="off" type="text" class="form-control @error('pendidikan') is-invalid @enderror" name="pendidikan"  id="pendidikan" value="{{ old('pendidikan') }}">
-                    @error('pendidikan')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group mt-2">
-                    <label for="pekerjaan">Pekerjaan</label>
-                    <input autocomplete="off" type="text" class="form-control @error('pekerjaan') is-invalid @enderror" name="pekerjaan"  id="nama" value="{{ old('pekerjaan') }}">
-                    @error('pekerjaan')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>

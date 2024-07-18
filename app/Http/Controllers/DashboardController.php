@@ -15,12 +15,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $jumlahMasuk = Keuangan::sum('pemasukan');
-        $jumlahKeluar = Keuangan::sum('pengeluaran');
-        $saldo = $jumlahMasuk - $jumlahKeluar;
         $balita = Balita::all();
         $jumlahBalita = count($balita);
-        return view('dashboard',compact('jumlahBalita','jumlahMasuk','jumlahKeluar','saldo'));
+        return view('dashboard',compact('jumlahBalita'));
     }
 
     /**

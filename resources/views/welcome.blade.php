@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Posyandu Seruni 3</title>
+  <title>Posyandu Melati 2</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -44,10 +44,7 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="/"><img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU  SERUNI 3</span></a></h1>
-      
-        <!-- Uncomment below if you prefer to use an image logo -->
-        {{-- <a href="/"><img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"></a> --}}
+        <h1 class="text-light"><a href="/"><img src="assets/img/POSYANDU.png" alt="" style="height: 50px;" class="img-fluid"><span>POSYANDU  MELATI 2</span></a></h1>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
@@ -55,9 +52,10 @@
           <li class="active"><a href="/">Beranda</a></li>
           <li><a href="#about">Profil</a></li>
           <li><a href="#jadwal">Jadwal</a></li>
-          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#kegiatan">Kegiatan</a></li>
           <li><a href="#team">Organisasi</a></li>
           <li><a href="#contact">Kontak</a></li>
+          <li><a href="login">Login</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -72,23 +70,11 @@
       <div class="row">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1><span>Selamat Datang di Website Posyandu Seruni 3!</span></h1>
-            {{-- <h2>Pos Pelayanan Keluarga Berencana - Kesehatan Terpadu adalah kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang dibantu oleh petugas kesehatan. Posyandu merupakan salah satu Upaya Kesehatan Bersumberdaya Masyarakat.</h2> --}}
-            <!--<h2 style="font-size: 19px;">Perbaikan perilaku, keadaan gizi dan kesehatan keluarga.
-              <br> Mendukung perilaku hidup bersih dan sehat.
-              <br>Pencegahan penyakit yang berbasis lingkungan.
-              <br>Pencegahan penyakit dengan imunisasi.
-              <br>Mendukung pelayanan Keluarga Berencana.
-              <br>Mendukung pemberdayaan keluarga dan masyarakat.
-              <br>Pusat informasi dan konseling dalam perlindungan anak</h2>-->
-            <!--<div class="text-center text-lg-left">
-              <a href="#about" class="btn-get-started scrollto">Get Started</a>
-            </div>-->
+            <h1><span>Selamat Datang di Website Posyandu Melati 2!</span></h1>
           </div>
         </div>
         <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
           <img src="../assets/img/icon_posyandu.png" class="img-fluid animated" alt="">
-          {{-- <img src="https://2.bp.blogspot.com/-xzNy5pRqFV0/VxzKbUrqq6I/AAAAAAAAESI/iiFLk0N-K_EJBO9kGd944Om1XgGRuDSLwCLcB/s1600/Penimbangan%2Bbalita%252C%2Bsalah%2Bsatu%2Bkegiatan%2Bposyandu.jpg" class="img-fluid animated" alt=""> --}}
         </div>
       </div>
     </div>
@@ -120,8 +106,8 @@
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-            <h3>PROFIL POSYANDU SERUNI 3</h3>
-            <p>Posyandu Seruni 3 berdiri sejak tanggal 5 Mei 2008. Posyandu ini terletak di Perum. Ungaran Baru RT 004 RW 013, Ds. Leyangan, Kec. Ungaran Timur, Kab. Semarang dengan diketuai oleh Ibu Ita Sujarwo.<!--adalah kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang dibantu oleh petugas kesehatan. (Cessnasari. 2005) judul artikel (Pengertian Posyandu, Kegiatan, Definisi, Tujuan, Fungsi, Manfaat  dan Pelaksanaan Posyandu. KMS)--></p>
+            <h3>PROFIL POSYANDU MELATI 2</h3>
+            <p>Posyandu Melati Kelurahan Bontoramba Kabupaten Gowa sebagai salah satu lembaga pelayanan kesehatan masyarakat dihadapkan pada berbagai permasalahan. Beberapa di antaranya meliputi rendahnya pencatatan data pasien, kurangnya koordinasi antarpetugas kesehatan, serta minimnya aksesibilitas informasi kesehatan bagi ibu dan anak.</p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bxs-bullseye"></i></div>
@@ -151,38 +137,13 @@
             {{-- <h2>Jadwal</h2> --}}
             <p>Jadwal Pelayanan</p>
           </div>
-          {{-- <div class="count-box">
-            <table class="table table-bordered" data-aos="fade-left">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Layanan</th>
-                  <th scope="col">Tanggal</th>
-                 
-                </tr>
-              </thead>
-              <tbody>
-                @php
-                    $i=1;
-                @endphp
-                @foreach ($jadwal as $item) 
-                <tr>
-                <th scope="row">{{$i++}}</th>
-                  <td>{{$item->nama_kegiatan}}</td>
-                  <td>{{date('d F Y',strtotime($item->tanggal_kegiatan))}}</td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-          </div> --}}
   
           @foreach ($jadwal as $item)
           <div class="section-title pl-4" data-aos="fade-up">
             <h2 style="color:#010483 ">{{date('d F Y',strtotime($item->tanggal_kegiatan))}} </h2>
-            {{-- <p style="color: red;padding-left:20px;">{{$item->nama_kegiatan}}</p> --}}
-            <h3 style="padding-left:50px;font-size: 28px;font-weight: 700;color: #dd2c93{{-- #207a59 --}};">{{$item->nama_kegiatan}} 
+            <h3 style="padding-left:50px;font-size: 28px;font-weight: 700;color: #dd2c93;">{{$item->nama_kegiatan}} 
             </h3>
-            <span style="color:rosybrown;font-size: 14px;padding-left:60px;">Jam Layanan : {{$item->waktu}} WIB</span>
+            <span style="color:rosybrown;font-size: 14px;padding-left:60px;">Jam Layanan : {{$item->waktu}} WITA</span>
           </div>
           @endforeach
   
@@ -208,18 +169,10 @@
           <div class="col">
             <div class="count-box">
               <i class="icofont-people"></i>
-              <span data-toggle="counter-up">16</span>
+              <span data-toggle="counter-up">{{ $countKader }}</span>
               <p>Kader Posyandu</p>
             </div>
           </div>
-
-          {{-- <div class="col-lg-6 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="icofont-users-alt-5"></i>
-              <span data-toggle="counter-up">15</span>
-              <p>Hard Workers</p>
-            </div>
-          </div> --}}
           
         </div>
         <div class="count-box">
@@ -241,7 +194,7 @@
               <tr>
               <th scope="row">{{$i++}}</th>
                 <td>{{$item->nama_balita}}</td>
-                <td>{{$item->nama_orangtua}} </td>
+                <td>{{$item->orangtua->nama}} </td>
                 <td>{{$item->alamat}} </td>
               </tr>
               @endforeach
@@ -252,23 +205,14 @@
 
       </div>
     </section><!-- End Counts Section -->
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="panel">
-              <div id="chartNilai"></div>
-          </div>
-        </div>
-      </div>
-    </div>
     
 
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
+    <section id="kegiatan" class="gallery">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Galeri</h2>
+          <h2>Kegiatan</h2>
           <p>DOKUMENTASI KEGIATAN</p>
         </div>
 
@@ -285,11 +229,7 @@
           @endforeach
         </div>
       </div>
-    </section><!-- End Gallery Section -->
-    {{--<div id="myModal" class="modal">
-      <img class="modal-content" id="img01">
-      <div id="caption"></div>
-    </div>--}}
+    </section>
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -297,84 +237,15 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Organisasi</h2>
-          <p>ORGANISASI POSYANDU SERUNI 3</p>
+          <p>ORGANISASI POSYANDU MELATI 2</p>
         </div>
 
-        <center><img src="assets/img/gallery/struktur.jpg" alt="Stickman" width="1000px" height="500px"></center>"
-        {{--<div class="row" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Ita Sujarwo</h4>
-                <span>Ketua Kader Posyandu</span>
-                <!--<div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>-->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Ririn Hardini</h4>
-                <span>Sekretaris Kader Posyandu</span>
-                <!--<div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>-->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Tari Zamroni</h4>
-                <span>Bendahara Kader Posyandu</span>
-                <!--<div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>-->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic"><img src="assets/img/team/logoorang1.png" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Anggota Kader Posyandu</span>
-                <!--<div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>-->
-              </div>
-            </div>
-          </div>
-
-        </div>--}}
+        {{-- <center><img src="assets/img/gallery/struktur.jpg" alt="Stickman" width="1000px" height="500px"></center> --}}
 
       </div>
     </section><!-- End Team Section -->
 
     <!-- ======= Pricing Section ======= -->
-   
-
     
 
     <!-- ======= Contact Section ======= -->
@@ -393,13 +264,13 @@
               <div class="address">
                 <i class="icofont-google-map"></i>
                 <h4>Lokasi</h4>
-                <p>Perum. Ungaran Baru RT 004/RW 013, Ds. Leyangan, Kec. Ungaran Timur, Kab. Semarang</p>
+                <p>Kelurahan Mawang, Kecamatan Somba Opu, Kabupaten Gowa, Sulawesi Selatan</p>
               </div>
 
               <div class="email">
                 <i class="icofont-envelope"></i>
                 <h4>Email</h4>
-                <p>posyanduseruni3@gmail.com</p>
+                <p>posyandumelati2@gmail.com</p>
               </div>
 
               <div class="phone">
@@ -413,7 +284,7 @@
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.42503136935832!2d110.4308668!3d-7.149052!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDgnNTcuMSJTIDExMMKwMjUnNTEuNiJF!5e0!3m2!1sid!2sid!4v1607409735343!5m2!1sid!2sid" width="600" height="250" frameborder="5" style="border:5px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15893.004366600599!2d119.4886417!3d-5.2231969!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee169c2345c07%3A0x90969740f9165c0d!2sPOSYANDU%20MELATI%202%20KEL.%20MAWANG!5e0!3m2!1sid!2sid!4v1720486959379!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
 
         </div>
@@ -427,15 +298,8 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>2021<!--Bootslander--></span></strong>. Posyandu Seruni 3
+        &copy; Copyright <strong><span>2024<!--Bootslander--></span></strong>. Posyandu Melat 2
       </div>
-      {{--<div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        <!--Designed by A22.2018.02677 (Febrina Cahyani A.)--><!--<a href="https://bootstrapmade.com/">BootstrapMade</a>-->
-      </div>--}}
     </div>
   </footer><!-- End Footer -->
 

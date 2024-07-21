@@ -66,6 +66,9 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                     <!--<a class="dropdown-item" href="{{ route('logout') }}">Profil</a>-->
+                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                      {{ __('Edit Profile') }}
+                   </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     {{ __('Log Out') }}
@@ -93,10 +96,12 @@
         <a href="/imunisasi" class="{{ request()->is('imunisasi') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Imunisasi</span></a>
         <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Orang Tua</span></a>
         <a href="/penimbangan" class="{{ request()->is('penimbangan') ? 'active-side' : '' }}"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
-        <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
-        <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
-      <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
-      <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
+        @if(Auth::user()->type == 'admin')
+          <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
+          <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
+          <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
+          <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
+        @endif
       </div>
     </div>
     <!--mobile navigation bar end-->
@@ -111,10 +116,12 @@
       <a href="/imunisasi" class="{{ request()->is('imunisasi') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Imunisasi</span></a>
       <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Orang Tua</span></a>
       <a href="/penimbangan" class="{{ request()->is('penimbangan') ? 'active-side' : '' }}"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
-      <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
-      <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
-      <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
-      <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
+      @if(Auth::user()->type == 'admin')
+        <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
+        <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
+        <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
+        <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
+      @endif
    
     </div>
     <!--sidebar end-->

@@ -9,7 +9,7 @@
     </ol>
 </nav>
 <!--=======-->
-@if (session('status'))
+@if (session('status'))  
 <div class="alert alert-success">
         {{ session('status') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -33,8 +33,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Nama Akun</th>
                 <th scope="col">Email</th>
-                <th scope="col">Password</th>
-                <th scope="col">Akun Dibuat</th>
+                <th scope="col">Role</th>
                 <th scope="col">Aksi</th>
             
               </tr>
@@ -48,8 +47,7 @@
                 <th scope="row">{{ $key + $akun->firstItem()}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->email}}</td>
-                    <td>{{$item->password}}</td>
-                    <td>{{$item->created_at}}</td>
+                    <td>{{ $item->type }}</td>
                     <td>
                         
                         <form action="/akun/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">

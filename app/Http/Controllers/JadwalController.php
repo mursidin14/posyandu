@@ -14,10 +14,7 @@ use Illuminate\Support\Carbon;
 
 class JadwalController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
     /**
      * Display a listing of the resource.
      *

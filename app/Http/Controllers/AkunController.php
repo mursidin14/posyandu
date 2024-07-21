@@ -44,12 +44,14 @@ class AkunController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'type' => ['required', 'string', 'in:admin,user'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
         
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'type' => $request->type,
             'password' => Hash::make($request->password),
         ]);
         return redirect('/akun')->with('status','Akun berhasil dibuat!');
@@ -90,12 +92,14 @@ class AkunController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
+            'type' => ['required', 'string', 'in:admin,user'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
         User::where('id',$id)->update([
             'name' => $request->name,
             'email' => $request->email,
+            'type' => $request->type,
             'password' => Hash::make($request->password),
         ]);
         return redirect('/akun')->with('status','Akun berhasil diubah!');

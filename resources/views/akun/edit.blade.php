@@ -47,6 +47,22 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right" for="role">Role</label>
+                            
+                            <div class="col-md-6">
+                                <select name="type" class="custom-select mr-sm-2 @error('type') is-invalid @enderror" id="inlineFormCustomSelect">
+                                    <option value="admin">admin</option>
+                                    <option value="user">user</option>
+                                </select>
+                                @error('type')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password Baru') }}</label>
 
                             <div class="col-md-6">

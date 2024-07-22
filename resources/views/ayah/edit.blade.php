@@ -8,19 +8,19 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/orangtua" style="color: #fd6bc5">Data Orang Tua</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Edit Data Orang Tua</li>
+          <li class="breadcrumb-item"><a href="/ayah" style="color: #fd6bc5">Data Ayah</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit Data Ayah</li>
         </ol>
     </nav>
     <div class="row justify-content-center">
         <div class="col">
             <div class="card shadow p-3 mb-5 bg-white rounded">
-            <form action="/orangtua/{{$orangTua->id}}" method="post" enctype="multipart/form-data">
+            <form action="/ayah/{{$ayah->id}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ $orangTua->nama }}">
+                    <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ $ayah->nama }}">
                     @error('nama')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="alamat">Alamat</label>
-                    <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"  id="alamat" value="{{ $orangTua->alamat }}">
+                    <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat"  id="alamat" value="{{ $ayah->alamat }}">
                     @error('alamat')
                     <div class="invalid-feedback">
                         {{$message}}

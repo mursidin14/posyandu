@@ -86,11 +86,21 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-4">
                         <div class="form-group">
-                            <label for="inlineFormCustomSelect">Nama OrangTua</label>
+                            <label for="inlineFormCustomSelect">Nama Ibu</label>
                             <select name="orang_tua_id" class="custom-select mr-sm-2 @error('orang_tua_id') is-invalid @enderror" id="inlineFormCustomSelect">
                                 @foreach ($orangTua as $option)
+                                    <option value="{{$option->id ?? null}}">{{$option->nama ?? null}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="inlineFormCustomSelect">Nama Ayah</label>
+                            <select name="ayah_id" class="custom-select mr-sm-2 @error('ayah_id') is-invalid @enderror" id="inlineFormCustomSelect">
+                                @foreach ($ayah as $option)
                                     <option value="{{$option->id ?? null}}">{{$option->nama ?? null}}</option>
                                 @endforeach
                             </select>
@@ -123,7 +133,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="ket">Keterangan</label>
-                    <textarea autocomplete="off" type="text" class="form-control @error('ket') is-invalid @enderror" name="ket"  id="nama" value="{{ old('ket') }}" placeholder="lahir dengan selamat / meninggal"></textarea>
+                    <textarea autocomplete="off" type="text" class="form-control @error('ket') is-invalid @enderror" name="ket"  id="nama" value="{{ old('ket') }}" placeholder="Normal"></textarea>
                     @error('ket')
                     <div class="invalid-feedback">
                         {{$message}}

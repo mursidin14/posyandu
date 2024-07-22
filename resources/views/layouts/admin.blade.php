@@ -94,7 +94,9 @@
         <a href="/dashboard" class="{{ request()->is('dashboard') ? 'active-side' : '' }}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
         <a href="/balita" class="{{ request()->is('balita') ? 'active-side' : '' }}"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
         <a href="/imunisasi" class="{{ request()->is('imunisasi') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Imunisasi</span></a>
-        <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Orang Tua</span></a>
+        <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Ibu</span></a>
+        <a href="/ayah" class="{{ request()->is('ayah') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Ayah</span></a>
+        <a href="/kelahiran" class="{{ request()->is('kelahiran') ? 'active-side' : '' }}"><i class="fas fa-clipboard-list"></i><span>Data Kelahiran</span></a>
         <a href="/penimbangan" class="{{ request()->is('penimbangan') ? 'active-side' : '' }}"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
         @if(Auth::user()->type == 'admin')
           <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
@@ -114,7 +116,9 @@
       <a href="/dashboard" class="{{ request()->is('dashboard') ? 'active-side' : '' }}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
       <a href="/balita" class="{{ request()->is('balita') ? 'active-side' : '' }}"><i class="fas fa-baby-carriage"></i><span>Data Balita</span></a>
       <a href="/imunisasi" class="{{ request()->is('imunisasi') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Imunisasi</span></a>
-      <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Orang Tua</span></a>
+      <a href="/orangtua" class="{{ request()->is('orangtua') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Ibu</span></a>
+      <a href="/ayah" class="{{ request()->is('ayah') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Data Ayah</span></a>
+      <a href="/kelahiran" class="{{ request()->is('kelahiran') ? 'active-side' : '' }}"><i class="fas fa-clipboard-list"></i><span>Data Kelahiran</span></a>
       <a href="/penimbangan" class="{{ request()->is('penimbangan') ? 'active-side' : '' }}"><i class="fas fa-balance-scale"></i><span>Data Penimbangan</span></a>
       @if(Auth::user()->type == 'admin')
         <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>

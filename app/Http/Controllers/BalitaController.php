@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ayah;
 use App\Models\Balita;
 use App\Models\OrangTua;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class BalitaController extends Controller
     //Menampilkan View Index
     public function index()
     {
-        $balita = Balita::orderBy('created_at','ASC')->with('orangtua')->paginate(10);
+        $balita = Balita::orderBy('created_at','ASC')->with(['orangtua', 'ayah'])->paginate(10);
         return view('balita.index', compact('balita'));
     }
 
@@ -25,7 +26,8 @@ class BalitaController extends Controller
     public function create()
     {
         $orangTua = OrangTua::all();
-        return view('balita.create',compact('orangTua'));
+        $ayah = Ayah::all();
+        return view('balita.create',compact('orangTua', 'ayah'));
     }
 
  
@@ -40,6 +42,7 @@ class BalitaController extends Controller
             'jenis_kelamin'=>'required',
             'umur'=>'required',
             'orang_tua_id'=>'required',
+            'ayah_id'=>'required',
             'alamat'=>'required',
             'rt_rw'=>'required',
             'ket'=>'required',
@@ -60,7 +63,8 @@ class BalitaController extends Controller
     {   
         $balita = Balita::findOrFail($id);
         $orangTua = OrangTua::all();
-        return view('balita.edit',compact('orangTua','balita'));
+        $ayah = Ayah::all();
+        return view('balita.edit',compact('orangTua','balita', 'ayah'));
     }
 
  
@@ -74,6 +78,7 @@ class BalitaController extends Controller
             'jenis_kelamin'=>'required',
             'umur'=>'required',
             'orang_tua_id'=>'required',
+            'ayah_id'=>'required',
             'alamat'=>'required',
             'rt_rw'=>'required',
             'ket'=>'required',
@@ -85,6 +90,7 @@ class BalitaController extends Controller
                     'tpt_lahir'=>$request->tpt_lahir,
                     'tgl_lahir'=>$request->tgl_lahir,
                     'orang_tua_id'=>$request->orang_tua_id,
+                    'ayah_id'=>$request->ayah_id,
                     'jenis_kelamin'=>$request->jenis_kelamin,
                     'umur'=>$request->umur,
                     'alamat'=>$request->alamat,

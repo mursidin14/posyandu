@@ -30,7 +30,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Data Ibu</li>
+      <li class="breadcrumb-item active" aria-current="page">Data Ayah</li>
     </ol>
 </nav>
 <div class="">
@@ -42,7 +42,7 @@
 <div class="">
     <div class="card border-left-primary shadow p-3 mb-5 bg-white rounded">
         <div class="d-flex justify-content-lg-end mb-3">
-            <a class="btn btn-outline-secondary" href="/orangtua/create"><span class="icon text">
+            <a class="btn btn-outline-secondary" href="/ayah/create"><span class="icon text">
                 <i class="fas fa-plus"></i>
             </span>Tambah Data</a>
     
@@ -59,26 +59,26 @@
             </thead>
             <tbody>
                 <?php $i=1; ?>
-                @foreach($orangTua as $key => $item)
+                @foreach($ayah as $key => $item)
                 <tr>
-                <th scope="row">{{ $key + $orangTua->firstItem()}}</th>
+                <th scope="row">{{ $key + $ayah->firstItem()}}</th>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->alamat}}</td>
                     <td>
-                        <form action="/orangtua/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                        <form action="/ayah/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
                         </form>
                         {{-- <a href="/balita/{{$item->id}}" class="btn btn-primary" ><i class="fas fa-search"></i></a>  --}}
-                        <a href="/orangtua/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
+                        <a href="/ayah/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
                     </td>
                 </tr>
                 @endforeach
             </tbody>
             
         </table>
-        {{$orangTua->links()}}
+        {{$ayah->links()}}
         </div>
     </div>
 </div>

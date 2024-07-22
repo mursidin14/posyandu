@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <label for="nik">Nik Balita</label>
                     <input type="text" class="form-control @error('nik') is-invalid @enderror" name="nik"  id="nik" value="{{ $balita->nik }}">
-                    @error('nama_balita')
+                    @error('nik')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>
@@ -87,9 +87,17 @@
                 </div>
            
                 <div class="form-group">
-                    <label for="inlineFormCustomSelect">Nama Orang Tua</label>
+                    <label for="inlineFormCustomSelect">Nama Ibu</label>
                     <select name="orang_tua_id" class="custom-select mr-sm-2 @error('orang_tua_id') is-invalid @enderror" id="inlineFormCustomSelect">
                         @foreach ($orangTua as $option)
+                         <option value="{{$option->id ?? null}}">{{$option->nama ?? null}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inlineFormCustomSelect">Nama Ayah</label>
+                    <select name="ayah_id" class="custom-select mr-sm-2 @error('ayah_id') is-invalid @enderror" id="inlineFormCustomSelect">
+                        @foreach ($ayah as $option)
                          <option value="{{$option->id ?? null}}">{{$option->nama ?? null}}</option>
                         @endforeach
                     </select>

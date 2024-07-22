@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Balita extends Model
 {
@@ -19,6 +20,7 @@ class Balita extends Model
         'jenis_kelamin',
         'umur',
         'orang_tua_id',
+        'ayah_id',
         'alamat',
         'rt_rw',
         'ket',
@@ -27,9 +29,21 @@ class Balita extends Model
     public function orangtua(){
         return $this->belongsTo(OrangTua::class,'orang_tua_id','id');
     }
+
+    public function ayah(): BelongsTo
+    {
+        return $this->belongsTo(Ayah::class, 'ayah_id', 'id');
+    }
+
+    public function kelahiran(): BelongsTo
+    {
+        return $this->belongsTo(Kelahiran::class);
+    }
+
     public function penimbangan(){
         return $this->hasMany(Penimbangan::class);
     }
+
     public function imunisasi(){
         return $this->hasMany(Imunisasi::class);
     }

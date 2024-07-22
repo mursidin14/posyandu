@@ -58,7 +58,8 @@
                 <th scope="col">Tanggal Lahir</th>
                 <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Umur</th>
-                <th scope="col">Nama Orangtua</th>
+                <th scope="col">Ibu</th>
+                <th scope="col">Ayah</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">RT/RW</th>
                 <th scope="col">Keterangan</th>
@@ -77,6 +78,7 @@
                     <td>{{$item->jenis_kelamin}}</td>
                     <td>{{$item->umur}}</td>
                     <td>{{$item->orangtua->nama}}</td>
+                    <td>{{$item->ayah->nama}}</td>
                     <td>{{$item->alamat}}</td>
                     <td>{{$item->rt_rw}}</td>
                     <td>{{$item->ket}}</td>

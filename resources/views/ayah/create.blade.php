@@ -7,20 +7,20 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/dashboard" style="color: #fd6bc5">Dashboard</a></li>
-      <li class="breadcrumb-item"><a href="/orangtua" style="color: #fd6bc5">Data Orang Tua</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Tambah Orang Tua</li>
+      <li class="breadcrumb-item"><a href="/ayah" style="color: #fd6bc5">Data Ayah</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tambah Ayah</li>
     </ol>
 </nav>
 <div class="">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow p-3 mb-5 bg-white rounded">
-            <form action="/orangtua" method="post" enctype="multipart/form-data">
+            <form action="/ayah" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('post')
                 <div class="form-group">
-                    <label for="nama_ibu">Nama</label>
-                    <input autocomplete="off" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ old('nama') }}" placeholder="Rudi & Siti">
+                    <label for="nama_ayah">Nama Ayah</label>
+                    <input autocomplete="off" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ old('nama') }}" placeholder="Rudi">
                     @error('nama')
                     <div class="invalid-feedback">
                         {{$message}}

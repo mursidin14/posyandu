@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\AkunController;
+use App\Http\Controllers\AyahController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BalitaController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ImunisasiController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\KelahiranController;
 use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\OrangTuaController;
@@ -41,6 +43,8 @@ Route::get('/dashboard', [DashboardController::class,'index'])->middleware('auth
 Route::resource('/balita' ,BalitaController::class)->middleware('auth');
 Route::resource('/imunisasi' ,ImunisasiController::class)->middleware('auth');
 Route::resource('/orangtua' ,OrangTuaController::class)->middleware('auth');
+Route::resource('/ayah' ,AyahController::class)->middleware('auth');
+Route::resource('/kelahiran' ,KelahiranController::class)->middleware('auth');
 Route::resource('/penimbangan' ,PenimbanganController::class)->middleware('auth');
 
 //filter Penimbangan

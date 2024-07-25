@@ -58,6 +58,29 @@
             </div>
         </div>
     </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #ff7ec9">
+                          Ibu yang Terdata</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlahIbu}} Ibu</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+          <div class="d-flex justify-content-center" >
+              <a href="/orangtua" class="justify-content-center text-decoration-none">
+                  Info lebih lanjut <i class="fa fa-arrow-circle-right"></i>
+              </a>
+          </div>
+      </div>
+  </div>
 </div>
 
 <!-- Content Row -->

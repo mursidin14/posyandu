@@ -104,6 +104,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $imunisasi->links() }}
         </div>
     </div>
 </div>

@@ -45,7 +45,9 @@
             <a class="btn btn-outline-secondary" href="/balita/create"><span class="icon text">
                 <i class="fas fa-plus"></i>
             </span>Tambah Data</a>
-    
+            {{-- <button id="print-button" class="btn btn-outline-primary"><span class="icon text">
+              <i class="fas fa-print"></i>
+          </span>Tambah Data --}}
         </div>
         <div class="table-responsive">
         <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">

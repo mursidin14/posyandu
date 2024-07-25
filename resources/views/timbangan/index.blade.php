@@ -182,6 +182,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $timbangan->links() }}
         </div>
     </div>
 </div>

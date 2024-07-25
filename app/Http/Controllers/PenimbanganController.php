@@ -25,8 +25,9 @@ class PenimbanganController extends Controller
     {
         $dari = '';
         $sampai = '';
+        $tanggalPelayanan = Jadwal::orderBy('tanggal_kegiatan','ASC')->get();
         $balita = Balita::all();
-        $timbangan = Penimbangan::with('balita','user')->orderBy('tanggal_timbang', 'DESC')->paginate(10);
+        $timbangan = Penimbangan::with('balita')->orderBy('tanggal_timbang', 'DESC')->paginate(5);
         $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
@@ -45,7 +46,6 @@ class PenimbanganController extends Controller
         
         $jenisKelaminPerem = Balita::where('jenis_kelamin','Perempuan')->get();
         $perem[] = count($jenisKelaminPerem);
-        $tanggalPelayanan = Jadwal::all();
     
         return view('timbangan.index',compact(
             'timbangan',

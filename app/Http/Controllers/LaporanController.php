@@ -85,9 +85,9 @@ class LaporanController extends Controller
 
         // Buat view untuk PDF
         $pdf = PDF::loadView('laporan.pdf', compact('laporan', 'bulan', 'tahun'));
-
+        return $pdf->stream('laporan.pdf');
         // Download PDF
-        return $pdf->download('laporan_anak.pdf');
+        // return $pdf->download('laporan_anak.pdf');
     }
 }
 

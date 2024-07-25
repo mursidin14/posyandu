@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Balita;
+use App\Models\OrangTua;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -19,8 +20,10 @@ class DashboardController extends Controller
     public function index()
     {
         $balita = Balita::all();
+        $ibu = OrangTua::all();
         $jumlahBalita = count($balita);
-        return view('dashboard',compact('jumlahBalita'));
+        $jumlahIbu = count($ibu);
+        return view('dashboard',compact('jumlahBalita', 'jumlahIbu'));
     }
 
     /**

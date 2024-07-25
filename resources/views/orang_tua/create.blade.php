@@ -20,7 +20,7 @@
                 @method('post')
                 <div class="form-group">
                     <label for="nama_ibu">Nama</label>
-                    <input autocomplete="off" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ old('nama') }}" placeholder="Rudi & Siti">
+                    <input autocomplete="off" type="text" class="form-control @error('nama') is-invalid @enderror" name="nama"  id="nama" value="{{ old('nama') }}" placeholder="Siti">
                     @error('nama')
                     <div class="invalid-feedback">
                         {{$message}}

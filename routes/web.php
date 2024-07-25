@@ -51,8 +51,8 @@ Route::resource('/penimbangan' ,PenimbanganController::class)->middleware('auth'
 Route::get('/filter/periodeTimbang',[PenimbanganController::class,'periodeTimbang'])->middleware(['auth', 'admin']);
 
 // cetak Laporan
-Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index')->middleware('admin');
-Route::get('/laporan/pdf', [LaporanController::class, 'exportPdf'])->name('laporan.pdf')->middleware('admin');
+Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index')->middleware(['auth', 'admin']);
+Route::get('/laporan/pdf', [LaporanController::class, 'exportPdf'])->name('laporan.pdf')->middleware(['auth', 'admin']);
 
 Route::resource('/blog' ,BlogController::class)->middleware(['auth', 'admin']);
 Route::resource('/akun' ,AkunController::class)->middleware(['auth', 'admin']);

@@ -14,34 +14,22 @@ class AllSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('id_ID');
+        // create akun Admin
         User::updateOrCreate([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('1234'),
             'type' => 'admin'
         ]);
-        // Menginput Data Palsu Ke Database
-        for ($i = 0; $i <= 10; $i++) {
-            if ($i % 2) {
-                $jenis = 'Laki-Laki';
-            } else {
-                $jenis = 'Perempuan';
-            }
 
-            OrangTua::create([
-                'nama' => $faker->name(),
-                'alamat' => $faker->address(),
-                'ket' => null
-            ]);
+        // Create akun kader
+        User::updateOrCreate([
+            'name' => 'kader',
+            'email' => 'kader@gmail.com',
+            'password' => Hash::make('12345678'),
+            'type' => 'user'
+        ]);
 
-            // Balita::create([
-            //     'nama_balita' => $faker->name,
-            //     'tpt_lahir' => $faker->date(),
-            //     'tgl_lahir' => $faker->date(),
-            //     'orang_tua_id' => rand(1, 2),
-            //     'jenis_kelamin' => $jenis,
-            //     'ket' => null,
-            // ]);
-        }
+        
     }
 }

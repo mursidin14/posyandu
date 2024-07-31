@@ -19,7 +19,7 @@ class AkunController extends Controller
      */
     public function index()
     {
-        $akun = User::paginate(5);
+        $akun = User::paginate(10);
         return view('akun.index',compact('akun'));
     }
 

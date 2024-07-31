@@ -26,13 +26,15 @@
                 <th>No</th>
                 <th>Nik</th>
                 <th>Nama</th>
+                <th>Jenis Kelamin</th>
                 <th>BB</th>
                 <th>TB/PB</th>
                 <th>LIKa</th>
                 <th>LILA</th>
                 <th>Umur</th>
                 <th>Jenis Imun</th>
-                <th>Keterangan</th>
+                {{-- <th>Alamat</th> --}}
+                {{-- <th>Keterangan</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -41,12 +43,14 @@
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $item->nik }}</td>
                     <td>{{ $item->nama_balita }}</td>
+                    <td>{{ $item->jenis_kelamin }}</td>
                     <td>{{ $item->bb }}</td>
                     <td>{{ $item->tb }}</td>
                     <td>{{ $item->lika }}</td>
                     <td>{{ $item->lila }}</td>
                     <td>{{ $item->umur }}</td>
                     <td>{{ $item->jenis_imun }}</td>
+                    {{-- <td>{{ $item->alamat }}</td> --}}
                     {{-- <td>{{ $item->ket }}</td> --}}
                 </tr>
             @endforeach

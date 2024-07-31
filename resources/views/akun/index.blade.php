@@ -63,7 +63,7 @@
             </tbody>
             
         </table>
-        {{-- {{$akun->links()}} --}}
+        {{$akun->links()}}
         </div>
     </div>
 </div>

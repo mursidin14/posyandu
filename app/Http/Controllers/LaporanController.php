@@ -27,13 +27,15 @@ class LaporanController extends Controller
             ->leftJoin('imunisasi', 'balitas.id', '=', 'imunisasi.balita_id')
             ->select(
                 'balitas.nik', 
-                'balitas.nama_balita', 
+                'balitas.nama_balita',
+                'balitas.jenis_kelamin', 
                 'penimbangans.bb', 
                 'penimbangans.tb', 
                 'penimbangans.lika', 
                 'penimbangans.lila', 
                 'balitas.umur', 
-                'imunisasi.jenis_imun', 
+                'imunisasi.jenis_imun',
+                'balitas.alamat',
                 // 'penimbangans.ket'
             );
 
@@ -64,12 +66,14 @@ class LaporanController extends Controller
             ->select(
                 'balitas.nik', 
                 'balitas.nama_balita', 
+                'balitas.jenis_kelamin',
                 'penimbangans.bb', 
                 'penimbangans.tb', 
                 'penimbangans.lika', 
                 'penimbangans.lila', 
                 'balitas.umur', 
-                'imunisasi.jenis_imun', 
+                'imunisasi.jenis_imun',
+                'balitas.alamat',
                 // 'penimbangans.ket'
             );
 

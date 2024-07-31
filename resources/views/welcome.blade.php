@@ -51,6 +51,7 @@
         <ul>
           <li class="active"><a href="/">Beranda</a></li>
           <li><a href="#about">Profil</a></li>
+          <li><a href="#layanan">Layanan</a></li>
           <li><a href="#jadwal">Jadwal</a></li>
           <li><a href="#kegiatan">Kegiatan</a></li>
           <li><a href="#team">Organisasi</a></li>
@@ -129,6 +130,45 @@
     </section><!-- End About Section -->
 
     <main id="main">
+      
+      {{-- Pelayanan --}}
+      <section id="layanan" class="features text-center">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-up">
+            {{-- <h2>Jadwal</h2> --}}
+            <p>Pelayanan</p>
+          </div>
+  
+          <div class="row justify-content-center">
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <img src="assets/img/timbang.png" class="card-img-top" alt="timbangan">
+                  <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">Penimbangan</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <img src="assets/img/imunisasi.png" class="card-img-top" alt="imunisasi">
+                  <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                          <div class="col mr-2">
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">Imunisasi</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>   
+          </div>        
+  
+        </div>
+      </section><!-- End Features Section -->
 
       <section id="jadwal" class="features">
         <div class="container">

@@ -101,7 +101,7 @@
         @if(Auth::user()->type == 'admin')
           <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
           <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
-          <a href="/jenisImun" class="{{ request()->is('jenisImun') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Jenis Imun</span></a>
+          <a href="/jenisimun" class="{{ request()->is('jenisimun') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Jenis Imun</span></a>
           <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
           <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
         @endif
@@ -124,7 +124,7 @@
       @if(Auth::user()->type == 'admin')
         <a href="/blog" class="{{ request()->is('blog') ? 'active-side' : '' }}"><i class="fas fa-calendar"></i><span>Data Jadwal Pelayanan</span></a>
         <a href="/gallery" class="{{ request()->is('gallery') ? 'active-side' : '' }}"><i class="fas fa-image"></i><span>Galeri</span></a>
-        <a href="/jenisImun" class="{{ request()->is('jenisImun') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Jenis Imun</span></a>
+        <a href="/jenisimun" class="{{ request()->is('jenisimun') ? 'active-side' : '' }}"><i class="fas fa-syringe"></i><span>Data Jenis Imun</span></a>
         <a href="/akun" class="{{ request()->is('akun') ? 'active-side' : '' }}"><i class="fas fa-user"></i><span>Kader</span></a>
         <a href="/laporan" class="{{ request()->is('laporan') ? 'active-side' : '' }}"><i class="fas fa-print"></i></i><span>Laporan</span></a>
       @endif

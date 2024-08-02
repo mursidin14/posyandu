@@ -56,7 +56,7 @@ Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index
 Route::get('/laporan/pdf', [LaporanController::class, 'exportPdf'])->name('laporan.pdf')->middleware(['auth', 'admin']);
 
 Route::resource('/blog' ,BlogController::class)->middleware(['auth', 'admin']);
-Route::resource('/jenisImun' ,JenisImunController::class)->middleware(['auth', 'admin']);
+Route::resource('/jenisimun' ,JenisImunController::class)->middleware(['auth', 'admin']);
 Route::resource('/akun' ,AkunController::class)->middleware(['auth', 'admin']);
 // Route::resource('/profile', ProfileController::class);
 Route::get('/',[JadwalController::class,'index']);

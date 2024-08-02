@@ -11,13 +11,22 @@
 <div class="card shadow p-3 mb-5 bg-white rounded border-left-primary">
     <div class="row">
         <div class="col-md-3">
-        <form action="/jenisImun" method="post" enctype="multipart/form-data">
+        <form action="/jenisimun" method="post" enctype="multipart/form-data">
             @csrf
             @method('post')
             <div class="form-group">
                 <label for="name_imun">Nama Imunisasi</label>
                 <input autocomplete="off" type="text" class="form-control @error('name_imun') is-invalid @enderror" name="name_imun"  id="name_imun" value="{{ old('name_imun') }}">
                 @error('name_imun')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="usia_pakai">Usia Pemakaian</label>
+                <input autocomplete="off" type="text" class="form-control @error('usia_pakai') is-invalid @enderror" name="usia_pakai"  id="usia_pakai" value="{{ old('usia_pakai') }}">
+                @error('usia_pakai')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>
@@ -46,21 +55,23 @@
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama Imunisasi</th>
+                <th scope="col">Usia Pemakaian</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
                 @foreach($jenisImun as $key => $item)
-                <tr class="clickable-row" data-href="/jenisImun/{{$item->id}}">
+                <tr class="clickable-row" data-href="/jenisimun/{{$item->id}}">
                     <td>{{ $key + 1 }}</td>
                     <td>{{$item->name_imun}}</td>
+                    <td>{{$item->usia_pakai}}</td>
                     <td>
-                        <form action="/jenisImun/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                        <form action="/jenisimun/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
                         </form>
-                        <a href="/jenisImun/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
+                        <a href="/jenisimun/{{$item->id}}/edit" class="btn btn-primary" ><i class="fas fa-edit"></i></a> 
                     </td>
                 </tr>
                 @endforeach

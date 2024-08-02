@@ -36,15 +36,6 @@
                     </div>
                     @enderror
                 </div>
-                {{-- <div class="form-group mt-2">
-                    <label for="ket">Keterangan</label>
-                    <textarea autocomplete="off" type="text" class="form-control @error('ket') is-invalid @enderror" name="ket"  id="nama" value="{{ old('ket') }}"></textarea>
-                    @error('ket')
-                    <div class="invalid-feedback">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div> --}}
                 <button type="submit" class="btn btn-outline-success">Simpan</button>
             </form>
         </div>

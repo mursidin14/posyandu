@@ -15,7 +15,7 @@ class JenisImunController extends Controller
     public function index()
     {
         $jenisImun = JenisImun::orderBy('created_at','ASC')->paginate(10);
-        return view('jenisImun.index', compact('jenisImun'));
+        return view('jenis_imun.index', compact('jenisImun'));
     }
 
     public function create()
@@ -26,39 +26,42 @@ class JenisImunController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name_imun' => ['required', 'max:100']
+            'name_imun' => ['required', 'max:100'],
+            'usia_pakai' => ['required', 'max:100']
         ]);
         JenisImun::create($request->all());
-        return redirect('/jenisImun')->with('status', 'Data Jenis imun Berhasil di Tambahkan');
+        return redirect('/jenisimun')->with('status', 'Data Jenis imun Berhasil di Tambahkan');
     }
 
     public function show($id)
     {
         $jenisImun = JenisImun::all();
-        return view('/jenisImun.detail', compact('jenisImun'));
+        return view('/jenis_imun.detail', compact('jenisImun'));
     }
 
-    public function eidt($id)
+    public function edit($id)
     {
         $jenisImun = JenisImun::findOrFail($id);
-        return view('/jenisImun.eidt', compact('jenisImun'));
+        return view('/jenis_imun.edit', compact('jenisImun'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name_imun' => 'required'
+            'name_imun' => 'required',
+            'usia_pakai' => 'required'
         ]);
         JenisImun::query()->where('id', $id)->update([
-            'name_imun' => $request->name_imun
+            'name_imun' => $request->name_imun,
+            'usia_pakai' => $request->usia_pakai
         ]);
 
-        return redirect('/jenisImun')->with('status', 'Data Jenis imun Berhasil di Update');
+        return redirect('/jenisimun')->with('status', 'Data Jenis imun Berhasil di Update');
     }
 
     public function destroy($id)
     {
         JenisImun::destroy($id);
-        return redirect('/jenisImun')->with('status', 'Data Jenis imun Berhasil Di hapus');
+        return redirect('/jenisimun')->with('status', 'Data Jenis imun Berhasil Di hapus');
     }
 }

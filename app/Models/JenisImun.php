@@ -17,7 +17,8 @@ class JenisImun extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'name_imun'
+        'name_imun',
+        'usia_pakai'
     ];
 
     public function imunisasi(): HasMany

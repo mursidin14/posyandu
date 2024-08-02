@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Balita;
 use App\Models\Gallery;
 use App\Models\Jadwal;
+use App\Models\JenisImun;
 use App\Models\Penimbangan;
 use Illuminate\Http\Request;
 use App\Models\Keuangan;
 use App\Models\User;
 use Carbon\Carbon as CarbonCarbon;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class JadwalController extends Controller
 {
@@ -23,39 +25,38 @@ class JadwalController extends Controller
     public function index()
     {
         $jadwal = Jadwal::orderBy('tanggal_kegiatan','ASC')->get();
-        $timbangan = Penimbangan::with('balita')->orderBy('tanggal_timbang','ASC')->paginate(100);
         $balita = Balita::all();
+        $jenis_imun = JenisImun::all();
         $countBalita = count($balita);
         $kader = User::all();
         $countKader = count($kader);
-        $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
-        foreach($timbangan as $mp){
-            $chart[]= $mp->balita->nama_balita;
-            $beratBadan[]= $mp->bb;
-            $tinggiBadan[]= $mp->tb;
-        }
+        $laporan = DB::table('balitas')
+        ->leftJoin('penimbangans', 'balitas.id', '=', 'penimbangans.balita_id')
+        ->leftJoin('orang_tuas', 'balitas.orang_tua_id', '=', 'orang_tuas.id')
+        ->select(
+            'balitas.nama_balita',
+            'orang_tuas.nama', 
+            'penimbangans.bb', 
+            'penimbangans.tb', 
+            'penimbangans.lika', 
+            'penimbangans.lila', 
+            'penimbangans.catatan',
+        )->get();
 
-        $jenisKelaminLaki = Balita::where('jenis_kelamin','Laki-laki')->get();
-        $laki[] = count($jenisKelaminLaki);
-        
-        $jenisKelaminPerem = Balita::where('jenis_kelamin','Perempuan')->get();
-        $perem[] = count($jenisKelaminPerem);
 
         $gallery = Gallery::all();
 
         return view('welcome',compact('jadwal',
             'countKader',
             'countBalita',
-            'timbangan',
-            'chart',
+            'laporan',
             'tinggiBadan',
             'beratBadan',
             'gallery',
             'balita',
-            'laki',
-            'perem',
+            'jenis_imun',
         ));
     }
 

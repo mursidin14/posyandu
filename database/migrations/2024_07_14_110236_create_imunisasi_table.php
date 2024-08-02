@@ -18,7 +18,7 @@ class CreateImunisasiTable extends Migration
             $table->string('tanggal_imun');
             $table->foreignId('balita_id')->constrained('balitas')->onDelete('cascade')->onUpdate('cascade')->nullable();
             $table->string('umur');
-            $table->string('jenis_imun');
+            $table->foreignId('jenis_imun')->constrained('jenis_imuns')->onDelete('cascade')->onUpdate('casCade')->nullable(true);
             $table->timestamps();
         });
     }

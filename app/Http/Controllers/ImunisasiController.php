@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Balita;
 use App\Models\Imunisasi;
 use App\Models\Jadwal;
+use App\Models\JenisImun;
 use Illuminate\Http\Request;
 
 class ImunisasiController extends Controller
@@ -22,9 +23,9 @@ class ImunisasiController extends Controller
     {
         $tanggal_imun = [];
         $balita = Balita::all();
-        $imunisasi = Imunisasi::with('balita')->orderBy('tanggal_imun', 'DESC')->paginate(10);
+        $jenis_imun = JenisImun::all();
+        $imunisasi = Imunisasi::with(['balita', 'jenisImun'])->orderBy('tanggal_imun', 'DESC')->paginate(10);
         $umur = [];
-        $jenis_imun = [];
         $tanggalPelayanan = Jadwal::all();
     
         return view('imunisasi.index',compact(
@@ -76,9 +77,9 @@ class ImunisasiController extends Controller
         $tanggal_imun = [];
         $imunisasi = Imunisasi::with('balita')->where('id',$id)->get();
         $umur = [];
-        $jenis_imun = [];
+        $jenis_imun = Imunisasi::with('jenisImun')->where('id', $id)->get();
  
-        return view('imunisasi.detail',compact('tanggal_imun','umur','jenis_imun'));
+        return view('imunisasi.detail',compact('tanggal_imun', 'imunisasi', 'umur','jenis_imun'));
     }
 
     /**
@@ -91,7 +92,8 @@ class ImunisasiController extends Controller
     {
         $imunisasi = Imunisasi::findOrFail($id);
         $balita = Balita::all();
-        return view('imunisasi.edit',compact('imunisasi','balita'));
+        $jenisImun = JenisImun::all();
+        return view('imunisasi.edit',compact('imunisasi','balita', 'jenisImun'));
     }
 
     /**

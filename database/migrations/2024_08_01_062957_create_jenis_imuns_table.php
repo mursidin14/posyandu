@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToBalitas extends Migration
+class CreateJenisImunsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddColumnToBalitas extends Migration
      */
     public function up()
     {
-        Schema::table('balitas', function (Blueprint $table) {
-            $table->foreignId('ayah_id')->constrained('ayahs')->onDelete('cascade')->onUpdate('cascade')->nullable();
+        Schema::create('jenis_imuns', function (Blueprint $table) {
+            $table->id();
+            $table->string('name_imun')->nullable(true);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddColumnToBalitas extends Migration
      */
     public function down()
     {
-        Schema::table('balitas', function (Blueprint $table) {
-            $table->dropColumn('ayah_id');
-        });
+        Schema::dropIfExists('jenis_imuns');
     }
 }

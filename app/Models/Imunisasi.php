@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Imunisasi extends Model
 {
@@ -21,5 +22,10 @@ class Imunisasi extends Model
 
     public function balita(){
         return $this->belongsTo(Balita::class);
+    }
+
+    public function jenisImun(): BelongsTo
+    {
+        return $this->belongsTo(JenisImun::class, 'jenis_imun', 'id');
     }
 }

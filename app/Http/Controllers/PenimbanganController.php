@@ -28,13 +28,11 @@ class PenimbanganController extends Controller
         $tanggalPelayanan = Jadwal::orderBy('tanggal_kegiatan','ASC')->get();
         $balita = Balita::all();
         $timbangan = Penimbangan::with('balita')->orderBy('tanggal_timbang', 'DESC')->paginate(5);
-        $chart = [];
         $tinggiBadan = [];
         $beratBadan = [];
         $lingkarKepala = [];
         $lingkarLengan = [];
         foreach($timbangan as $mp){
-            $chart[]= $mp->balita->nama_balita;
             $beratBadan[]= $mp->bb;
             $tinggiBadan[]= $mp->tb;
             $lingkarKepala[] = $mp->lika;
@@ -50,7 +48,6 @@ class PenimbanganController extends Controller
         return view('timbangan.index',compact(
             'timbangan',
             'balita',
-            'chart',
             'tinggiBadan',
             'beratBadan',
             'lingkarKepala',

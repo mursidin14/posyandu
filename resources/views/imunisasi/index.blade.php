@@ -46,13 +46,12 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="jenis_imun">Jenis Imunisasi</label>
-                <input autocomplete="off" type="text" class="form-control @error('jenis_imun') is-invalid @enderror" name="jenis_imun"  id="jenis_imun" value="{{ old('jenis_imun') }}">
-                @error('jenis_imun')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
+                <label for="inlineFormCustomSelect">Jenis Imunisasi</label>
+                <select name="jenis_imun" class="custom-select mr-sm-2 @error('jenis_imun') is-invalid @enderror" id="inlineFormCustomSelect">
+                    @foreach ($jenis_imun as $option)
+                        <option value="{{$option->id ?? null}}">{{$option->name_imun ?? null}}</option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>
         </form>
@@ -86,12 +85,11 @@
             <tbody>
                 @foreach($imunisasi as $key => $item)
                 <tr class="clickable-row" data-href="/imunisasi/{{$item->id}}">
-                {{-- <th scope="row" >{{ $key + $item->firstItem()}}</th> --}}
                     <td>{{ $key + 1 }}</td>
                     <td>{{$item->tanggal_imun}}</td>
                     <td >{{$item->balita->nama_balita}}</td>
                     <td>{{$item->umur}}</td>
-                    <td>{{$item->jenis_imun}}</td>
+                    <td>{{$item->jenisImun->name_imun}}</td>
                     <td>
                         <form action="/imunisasi/{{$item->id}}" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
                             @csrf

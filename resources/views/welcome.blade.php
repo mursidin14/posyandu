@@ -137,34 +137,25 @@
   
           <div class="section-title" data-aos="fade-up">
             {{-- <h2>Jadwal</h2> --}}
-            <p>Pelayanan</p>
+            <p>Jenis Vaksin</p>
           </div>
   
-          <div class="row justify-content-center">
+          <div class="row justify-content-center flex-wrap">
+            @foreach($jenis_imun as $item)
             <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <img src="assets/img/timbang.png" class="card-img-top" alt="timbangan">
+              <div class="card border-left-primary shadow py-2">
                   <div class="card-body">
                       <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
-                              <div class="h5 mb-0 font-weight-bold text-gray-800">Penimbangan</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: #1acc8d">
+                              {{ $item->name_imun }}</div>
+                              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $item->usia_pakai }}</div>
                           </div>
                       </div>
                   </div>
               </div>
-            </div>
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <img src="assets/img/imunisasi.png" class="card-img-top" alt="imunisasi">
-                  <div class="card-body">
-                      <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                              <div class="h5 mb-0 font-weight-bold text-gray-800">Imunisasi</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>   
+            </div>  
+            @endforeach
           </div>        
   
         </div>
@@ -187,8 +178,6 @@
           </div>
           @endforeach
   
-          
-  
         </div>
       </section><!-- End Features Section -->
 
@@ -209,7 +198,7 @@
           <div class="col">
             <div class="count-box">
               <i class="icofont-people"></i>
-              <span data-toggle="counter-up">{{ $countKader }}</span>
+              <span data-toggle="counter-up">{{ $countKader - 1 }}</span>
               <p>Kader Posyandu</p>
             </div>
           </div>
@@ -222,20 +211,27 @@
                 <th scope="col">No</th>
                 <th scope="col">Nama Balita</th>
                 <th scope="col">Nama Orangtua</th>
-                <th scope="col">Alamat </th>
-               
+                <th scope="col">BB </th>
+                <th scope="col">TB/PB </th>
+                <th scope="col">Lika </th>
+                <th scope="col">Lila </th>
+                <th scope="col">Ket </th>
               </tr>
             </thead>
             <tbody>
               @php
                   $i=1;
               @endphp
-              @foreach ($balita as $item) 
+              @foreach ($laporan as $item) 
               <tr>
               <th scope="row">{{$i++}}</th>
-                <td>{{$item->nama_balita}}</td>
-                <td>{{$item->orangtua->nama}} </td>
-                <td>{{$item->alamat}} </td>
+                <td>{{ $item->nama_balita }}</td>
+                <td>{{$item->nama}} </td>
+                <td>{{ $item->bb }}</td>
+                <td>{{ $item->tb }}</td>
+                <td>{{ $item->lika }}</td>
+                <td>{{ $item->lila }}</td>
+                <td>{{ $item->catatan }}</td>
               </tr>
               @endforeach
             </tbody>
@@ -359,134 +355,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script>
-    Highcharts.chart('chartNilai', {
-    chart: {
-        type: 'bar'
-    },
-    title: {
-        text: 'Jenis Kelamin'
-    },
-    subtitle: {
-        text: 'Source: Posyandu Seruni'
-    },
-    xAxis: {
-        categories: ['Jenis Kelamin', 'Umur'],
-        title: {
-            text: null
-        }
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Population (Balita)',
-            align: 'high'
-        },
-        labels: {
-            overflow: 'justify'
-        }
-    },
-    tooltip: {
-        valueSuffix: 'Balita'
-    },
-    plotOptions: {
-        bar: {
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor:
-            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-        shadow: true
-    },
-    credits: {
-        enabled: false
-    },
-    series: [{
-        name: 'Laki Laki',
-        // data: [107, 31, 635, 203, 2]
-        data: {!! json_encode($laki) !!}
-    }, {
-        name: 'Perempuan',
-        // data: [133, 156, 947, 408, 6]
-        data: {!! json_encode($perem) !!}
-    }]
-});
-            
-  </script>
-  <script>
-    Highcharts.chart('chartNilai2', {
-      chart: {
-          type: 'bar'
-      },
-      title: {
-          text: 'Jenis Kelamin'
-      },
-      subtitle: {
-          text: 'Source: Posyandu Seruni'
-      },
-      xAxis: {
-          categories: ['Jenis Kelamin', 'Umur'],
-          title: {
-              text: null
-          }
-      },
-      yAxis: {
-          min: 0,
-          title: {
-              text: 'Population (Balita)',
-              align: 'high'
-          },
-          labels: {
-              overflow: 'justify'
-          }
-      },
-      tooltip: {
-          valueSuffix: 'Balita'
-      },
-      plotOptions: {
-          bar: {
-              dataLabels: {
-                  enabled: true
-              }
-          }
-      },
-      legend: {
-          layout: 'vertical',
-          align: 'right',
-          verticalAlign: 'top',
-          x: -40,
-          y: 80,
-          floating: true,
-          borderWidth: 1,
-          backgroundColor:
-              Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-          shadow: true
-      },
-      credits: {
-          enabled: false
-      },
-      series: [{
-          name: 'Laki Laki',
-          // data: [107, 31, 635, 203, 2]
-          data: {!! json_encode($laki) !!}
-      }, {
-          name: 'Perempuan',
-          // data: [133, 156, 947, 408, 6]
-          data: {!! json_encode($perem) !!}
-      }]
-  }); 
-  </script>
+
   
 </body>
 

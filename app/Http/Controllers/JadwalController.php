@@ -43,7 +43,7 @@ class JadwalController extends Controller
             'penimbangans.lika', 
             'penimbangans.lila', 
             'penimbangans.catatan',
-        )->get();
+        )->paginate(10);
 
 
         $gallery = Gallery::all();

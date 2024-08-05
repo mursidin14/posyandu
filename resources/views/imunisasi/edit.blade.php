@@ -29,27 +29,28 @@
             </div>
             <div class="form-group">
                 <label for="inlineFormCustomSelect">Nama Balita</label>
-                <select name="balita_id" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option value="{{$imunisasi->balita->id}}" selected>{{$imunisasi->balita->nama_balita}}</option>
+                <select name="balita_id" class="custom-select mr-sm-2 @error('balita_id') is-invalid @enderror" id="inlineFormCustomSelect">
+                    @foreach ($balita as $option)
+                        <option value="{{$option->id ?? null}}">{{$option->nama_balita ?? null}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
-                <label for="bb">Berat Badan</label>
-                <input type="text" class="form-control @error('bb') is-invalid @enderror" name="bb"  id="bb" value="{{$penimbangan->bb}}">
-                @error('bb')
+                <label for="umur">Umur Balita</label>
+                <input autocomplete="off" type="text" class="form-control @error('umur') is-invalid @enderror" name="umur"  id="umur" value="{{ $imunisasi->umur }}">
+                @error('umur')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>
                 @enderror
             </div>
             <div class="form-group">
-                <label for="tb">Tinggi Badan</label>
-                <input type="text" class="form-control @error('tb') is-invalid @enderror" name="tb"  id="tb" value="{{ $penimbangan->tb }}">
-                @error('tb')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
+                <label for="inlineFormCustomSelect">Jenis Imunisasi</label>
+                <select name="jenis_imun" class="custom-select mr-sm-2 @error('jenis_imun') is-invalid @enderror" id="inlineFormCustomSelect">
+                    @foreach ($jenisImun as $option)
+                        <option value="{{$option->id ?? null}}">{{$option->name_imun ?? null}}</option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-outline-success">Simpan</button>
         </form>

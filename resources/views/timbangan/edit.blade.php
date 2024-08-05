@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label for="tanggal_timbang">Tanggal Penimbangan</label>
                 <div class="input-group mb-3">
-                <input class="dateselect form-control" name="tanggal_timbang" type="text" value="{{$penimbangan->tanggal_timbang}}">
+                <input class="form-control" name="tanggal_timbang" type="date" value="{{$penimbangan->tanggal_timbang}}">
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-addon2"><i class="fas fa-calendar"></i></span>
                     </div>

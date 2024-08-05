@@ -169,14 +169,18 @@
             <p>Jadwal Pelayanan</p>
           </div>
   
-          @foreach ($jadwal as $item)
-          <div class="section-title pl-4" data-aos="fade-up">
-            <h2 style="color:#010483 ">{{date('d F Y',strtotime($item->tanggal_kegiatan))}} </h2>
-            <h3 style="padding-left:50px;font-size: 28px;font-weight: 700;color: #dd2c93;">{{$item->nama_kegiatan}} 
-            </h3>
-            <span style="color:rosybrown;font-size: 14px;padding-left:60px;">Jam Layanan : {{$item->waktu}} WITA</span>
+          <div class="row">
+            @foreach ($jadwal as $item)
+              <div class="col-4">
+                <div class="section-title pl-4" data-aos="fade-up">
+                  <h2 style="color:#010483 ">{{date('d F Y',strtotime($item->tanggal_kegiatan))}} </h2>
+                  <h3 style="padding-left:50px;font-size: 28px;font-weight: 700;color: #dd2c93;">{{$item->nama_kegiatan}} 
+                  </h3>
+                  <span style="color:rosybrown;font-size: 14px;padding-left:60px;">Jam Layanan : {{$item->waktu}} WITA</span>
+                </div>
+              </div>
+            @endforeach
           </div>
-          @endforeach
   
         </div>
       </section><!-- End Features Section -->
@@ -237,6 +241,7 @@
             </tbody>
           </table>
         </div>
+        {{ $laporan->links() }}
         
 
       </div>
@@ -356,6 +361,19 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    window.addEventListener("beforeunload", function() {
+      localStorage.setItem("scrollPosition", window.scrollY);
+    });
+
+    window.addEventListener("load", function() {
+      const scrollPosition = localStorage.getItem("scrollPosition");
+      if(scrollPosition) {
+        window.scrollTo(0, parseInt(scrollPosition, 10));
+        localStorage.removeItem("scrollPosition");
+      }
+    });
+  </script>
   
 </body>
 

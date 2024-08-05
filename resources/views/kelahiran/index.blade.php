@@ -56,8 +56,8 @@
                 <th scope="col">Nama Ayah</th>
                 <th scope="col">Nama Bayi</th>
                 <th scope="col">Lahiran Ke-</th>
-                <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Tanggal Lahir</th>
+                <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Status Ibu</th>
                 <th scope="col">Status Bayi</th>
                 <th scope="col">Aksi</th>

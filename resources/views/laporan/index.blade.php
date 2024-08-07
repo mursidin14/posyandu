@@ -101,5 +101,6 @@
           @endforeach
       </tbody>
   </table>
-
+  {{ $laporan->links() }}
+  <br>
 @endsection

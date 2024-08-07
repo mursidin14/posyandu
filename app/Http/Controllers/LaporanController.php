@@ -25,6 +25,9 @@ class LaporanController extends Controller
         $laporan = DB::table('balitas')
             ->leftJoin('penimbangans', 'balitas.id', '=', 'penimbangans.balita_id')
             ->leftJoin('imunisasi', 'balitas.id', '=', 'imunisasi.balita_id')
+            ->leftJoin('jenis_imuns', function($join) {
+                $join->on('imunisasi.jenis_imun', '=', 'jenis_imuns.id');
+            })
             ->select(
                 'balitas.nik', 
                 'balitas.nama_balita',
@@ -34,7 +37,7 @@ class LaporanController extends Controller
                 'penimbangans.lika', 
                 'penimbangans.lila', 
                 'balitas.umur', 
-                'imunisasi.jenis_imun',
+                'jenis_imuns.name_imun as jenis_imun',
                 'balitas.alamat',
                 // 'penimbangans.ket'
             );
@@ -47,7 +50,7 @@ class LaporanController extends Controller
             $laporan = $laporan->whereYear('penimbangans.created_at', $tahun);
         }
 
-        $laporan = $laporan->get();
+        $laporan = $laporan->paginate(10);
 
         return view('laporan.index', compact('laporan', 'bulan', 'tahun'));
     }
@@ -63,16 +66,19 @@ class LaporanController extends Controller
         $laporan = DB::table('balitas')
             ->leftJoin('penimbangans', 'balitas.id', '=', 'penimbangans.balita_id')
             ->leftJoin('imunisasi', 'balitas.id', '=', 'imunisasi.balita_id')
+            ->leftJoin('jenis_imuns', function($join) {
+                $join->on('imunisasi.jenis_imun', '=', 'jenis_imuns.id');
+            })
             ->select(
                 'balitas.nik', 
-                'balitas.nama_balita', 
-                'balitas.jenis_kelamin',
+                'balitas.nama_balita',
+                'balitas.jenis_kelamin', 
                 'penimbangans.bb', 
                 'penimbangans.tb', 
                 'penimbangans.lika', 
                 'penimbangans.lila', 
                 'balitas.umur', 
-                'imunisasi.jenis_imun',
+                'jenis_imuns.name_imun as jenis_imun',
                 'balitas.alamat',
                 // 'penimbangans.ket'
             );
@@ -85,7 +91,7 @@ class LaporanController extends Controller
             $laporan = $laporan->whereYear('penimbangans.created_at', $tahun);
         }
 
-        $laporan = $laporan->get();
+        $laporan = $laporan->paginate(10);
 
         // Buat view untuk PDF
         $pdf = PDF::loadView('laporan.pdf', compact('laporan', 'bulan', 'tahun'));

@@ -59,6 +59,11 @@
               @endfor
           </select>
       </div>
+
+      <div class="form-group">
+        <label for="search">Search (NIK/Nama Balita):</label>
+        <input type="text" class="form-control" id="search" name="search" value="{{ request('search') }}">
+      </div>
       <button type="submit" class="btn btn-primary">Filter</button>
       <a href="{{ route('laporan.index') }}" class="btn btn-secondary">Reset</a>
       <a href="{{ route('laporan.pdf', ['bulan' => request('bulan'), 'tahun' => request('tahun')]) }}" class="btn btn-success">Export PDF</a>

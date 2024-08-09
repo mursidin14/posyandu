@@ -20,6 +20,7 @@ class LaporanController extends Controller
         // Dapatkan filter bulan dan tahun dari request
         $bulan = $request->input('bulan');
         $tahun = $request->input('tahun');
+        $search = $request->input('search');
 
         // Query untuk mendapatkan laporan
         $laporan = DB::table('balitas')
@@ -48,6 +49,13 @@ class LaporanController extends Controller
                                ->whereYear('penimbangans.created_at', $tahun);
         } elseif ($tahun) {
             $laporan = $laporan->whereYear('penimbangans.created_at', $tahun);
+        }
+
+        if($search) {
+            $laporan->where(function($i) use ($search) {
+                $i->where('balitas.nik', 'like', "%{$search}%")
+                  ->orWhere('balitas.nama_balita', 'like', "%{$search}%");
+            });
         }
 
         $laporan = $laporan->paginate(10);

@@ -67,6 +67,7 @@
       <button type="submit" class="btn btn-primary">Filter</button>
       <a href="{{ route('laporan.index') }}" class="btn btn-secondary">Reset</a>
       <a href="{{ route('laporan.pdf', ['bulan' => request('bulan'), 'tahun' => request('tahun')]) }}" class="btn btn-success">Export PDF</a>
+      <a href="{{ route('laporan.excel', ['bulan' => request('bulan'), 'tahun' => request('tahun')]) }}" class="btn btn-secondary">Export Excel</a>
   </form>
 
   <!-- Tabel laporan -->

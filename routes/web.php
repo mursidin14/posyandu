@@ -10,7 +10,6 @@ use App\Http\Controllers\ImunisasiController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\JenisImunController;
 use App\Http\Controllers\KelahiranController;
-use App\Http\Controllers\KeuanganController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\OrangTuaController;
 use App\Http\Controllers\PenimbanganController;
@@ -52,8 +51,14 @@ Route::resource('/penimbangan' ,PenimbanganController::class)->middleware('auth'
 Route::get('/filter/periodeTimbang',[PenimbanganController::class,'periodeTimbang'])->middleware(['auth', 'admin']);
 
 // cetak Laporan
-Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index')->middleware(['auth', 'admin']);
-Route::get('/laporan/pdf', [LaporanController::class, 'exportPdf'])->name('laporan.pdf')->middleware(['auth', 'admin']);
+// Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index')->middleware(['auth', 'admin']);
+// Route::get('/laporan/pdf', [LaporanController::class, 'exportPdf'])->name('laporan.pdf')->middleware(['auth', 'admin']);
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/laporan/pdf', [LaporanController::class, 'exportPdf'])->name('laporan.pdf');
+    Route::get('/laporan/excel', [LaporanController::class, 'exportExcel'])->name('laporan.excel');
+});
 
 Route::resource('/blog' ,BlogController::class)->middleware(['auth', 'admin']);
 Route::resource('/jenisimun' ,JenisImunController::class)->middleware(['auth', 'admin']);

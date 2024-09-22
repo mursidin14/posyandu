@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PDF;
+use App\Exports\LaporanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LaporanController extends Controller
 {
@@ -106,6 +108,15 @@ class LaporanController extends Controller
         return $pdf->stream('laporan.pdf');
         // Download PDF
         // return $pdf->download('laporan_anak.pdf');
+    }
+
+    // Function ekspor Excel
+    public function exportExcel(Request $request)
+    {
+        $bulan = $request->input('bulan');
+        $tahun = $request->input('tahun');
+
+        return Excel::download(new LaporanExport($bulan, $tahun), 'laporan.xlsx');
     }
 }
 
